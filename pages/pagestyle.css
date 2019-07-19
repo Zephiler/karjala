@@ -1,0 +1,295 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.center {
+  align-items: center;
+}
+
+.myrow >.centered {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+div {
+  display: inline-block;
+}
+
+.footer {
+  background: rgb(61, 53, 68);
+  bottom: 0;
+  height: 5%;
+  padding: 5px;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+}
+/*
+.myrow >.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+*/
+.section >.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+/*
+#main .grid-container, #main-right .grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+*/
+
+/*
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+*/
+
+.header {
+  background: rgb(145, 130, 130);
+  /* padding: 10px; */
+  width: 100%;
+}
+
+.header ul, .header ul li{
+  list-style: none;
+  padding: 0px 15px;
+  vertical-align: middle;
+  display: inline;
+}
+
+#points_modal {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  margin-bottom: 100px;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal_content {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  border-radius: 10px;
+  margin: 15% auto;
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+}
+
+.myButton {
+  background-color: rgb(90, 90, 252);
+  border-radius: 5px;
+  height: 5%;
+  width: 7%;
+  padding: 5px 10px;
+  margin: 5px auto;
+}
+.myInput {
+  width: 100%;
+}
+
+.myBox {
+  background: rgb(204, 218, 214); 
+  border: 2px solid black;
+  border-radius: 5px;
+  display: inline-block;
+  height: 3%;
+  margin: auto;
+  padding: 20px;
+  width: 15%;
+}
+
+.myImageBox {
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 0px 0px;
+  margin: 10px;
+  /*   margin: 10px 5px auto; */
+}
+
+.myImageBox_selected {
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  justify-content: center;
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 0px 0px;
+  margin: 10px;
+  /*   margin: 10px 5px auto; */
+}
+
+.myWordBox {
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  justify-content: center;
+  padding: 30% 0;
+  margin: 10px 10px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.myWordBox_selected {
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  justify-content: center;
+  padding: 30% 0;
+  margin: 10px 10px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid red;
+}
+
+.myBox_orange {
+  background: rgb(204, 218, 214); 
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 4px rgb(255, 95, 3);
+  display: inline-block;
+  height: 3%;
+  margin: auto;
+  padding: 20px;
+  width: 15%;
+}
+
+.myBox_green {
+  background: rgb(204, 218, 214); 
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 4px rgb(53, 255, 3);
+  display: inline-block;
+  height: 3%;
+  margin: auto;
+  padding: 20px;
+  width: 15%;
+}
+
+.myrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.p_points {
+  font-size: 22px;
+}
+
+section {
+  display: flex;
+}
+
+/* Page three */
+
+.item2 {
+  background: red;
+  grid-row-start: 1;
+  grid-row-end: 5;
+  grid-column-start: 2;
+}
+
+.grid-containerDD {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.grid-containerDD .grid-item {
+  padding: 50px;
+  font-size: 50px;
+  text-align: center;
+  border: 1px solid black;
+  background-size: auto; /* <-- background size */
+  background-position: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  width: 20%;
+  height: 100px;
+
+}
+.grid-containerDD  #firstGridItem {
+/*  vertical-align: middle; */
+  color: yellow;
+/*  background: url(./cat.png) no-repeat; */
+  background: url(./chicken.png) no-repeat;
+  background-size: contain;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.grid-containerDD  #secondGridItem {
+ /*  vertical-align: middle; */
+  color: yellow;
+  background: url(./cat.png) no-repeat;
+  height:100%;
+  width: 100%;
+  background-size: contain; /* <-- background size */
+  background-position: center;
+  display: block;
+}
+.grid-item.item3 {
+  background: url(./rabbit.png) no-repeat;
+  background-size: contain;
+  display: block;
+}
+
+.grid-item.item4 {
+    background: url(./dog.png) no-repeat;
+    background-size: contain;
+}
+
+.grid-item.item5 {
+  background: url(./cow2.png) no-repeat;
+  background-size: contain;
+}
+
+.grid-item.item6 {
+  background: url(./pig.png) no-repeat;
+  background-size: contain;
+}
+
+.grid-item.item7{
+  background: url(./cat.png) no-repeat;
+  background-size: contain;
+}
+.grid-item.item8{
+  background: url(./sheep.png) no-repeat;
+  background-size: contain;
+}
+.grid-item.item9{
+  background: url(./squirrel.png) no-repeat;
+  background-size: contain;
+}

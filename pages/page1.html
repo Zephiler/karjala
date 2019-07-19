@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/images/karjalaicon.gif">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" 
+      integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="pagestyle.css">
+    <!--<link rel="stylesheet" href="../pagestyle.css">-->
+    <title>Karelian project</title>
+</head>
+<body>
+  <div class="header">
+    <ul>
+      <li><a href="/"><i class="fa fa-angle-double-left"></i></a></li>
+      <!--  <li><a href="/">Main page</a></li> -->
+      <!-- <li><a href="/" onclick="return false">Other page</a></li> -->
+      <li><a href="/weekdays" onclick="return false">Weekdays Game</a></li>
+      <li><a href="/pickablock">Pick-a-block Game</a></li>
+      <li><a href="/dragdrop">Drag & Drop Game</a></li>
+    </ul>
+
+    <ul style="float:right;">
+      <li>fi</li>
+      <li>viena</li>
+    </ul>
+  </div>
+
+  <div id="points_modal">
+    <div class="modal_content">
+      <h1>modal</h1>
+      <p id="total_points"></p>
+
+
+      <button id="play_again">Again!</button>
+      <button id="close_modal">X</button>
+    </div>
+  </div>
+
+  <section style="display: block; text-align: center; margin: auto; padding: 20px;">
+    <div>How many blocks do you want?</div>
+      <br>
+        <button class="myButton" id="myBtn2" value=2>2</button>
+        <button class="myButton" id="myBtn3" value=3>3</button>
+        <button class="myButton" id="myBtn4" value=4>4</button>
+        <button class="myButton" id="myBtn5" value=5>5</button>
+      <br>
+    <div>
+      <!-- <input class="myInput" type="text" id="blocknumbers" placeholder="numbres between 2 - 4"/> -->
+        <br>
+      <div id="div_to_span"></div>
+        <br>
+    <!--  <button id="ok_btn">OK!</button> -->
+      <button id="clear_button">Clear</button>
+    </div>
+
+    <div class="myrow" style="justify-content: center">
+      <p style="font-weight: bold; font-size: 22px;">Arvaukset: &nbsp;</p>
+      <p id="guesses" style="font-weight: bold; font-size: 22px;" value=0>&nbsp;0&nbsp;</p>
+      <p style="font-weight: bold; font-size: 22px;">/</p>
+      <p id="allGuesses" style="font-weight: bold; font-size: 22px;" value=0>&nbsp;0&nbsp;</p>
+    </div>
+  </section>
+  <div class="myrow" style="justify-content: center">
+    <p id="theDay"><strong></strong></p>
+    <!-- <p id="theDay"><strong>theday</strong></p> -->
+  </div>
+  <!--
+  <button id="paina">Paina</button>
+  <button id="kokeilu">kokeilu</button>
+-->
+<!--
+  <div id="koe" style="height: 30px; width:100%; background-color:red;">
+  </div>
+-->
+  <!--
+  <section>
+    <div class="myBox" id="myBoxOne">yksi</div>
+    <div class="myBox" id="myBoxTwo">kaksi</div>
+    <div class="myBox" id="myBoxThree">kolme</div>
+  </section>
+  -->
+
+  <section id="main">
+  </section>
+
+  <div class="footer">footer</div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="../pageone.js"></script>
+  
+</body>
+</html>
