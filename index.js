@@ -4,9 +4,6 @@ const url = require('url');
 
 const app = express();
 
-
-//app.use(express.static('public'));  may have to open..
-
 app.use(express.static('public'));
 
 app.use("/", express.static(__dirname + "/pages"));

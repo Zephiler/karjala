@@ -235,9 +235,12 @@ section {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  /*
   width: 20%;
   height: 100px;
-
+  */
 }
 .grid-containerDD  #firstGridItem {
 /*  vertical-align: middle; */
@@ -254,8 +257,12 @@ section {
  /*  vertical-align: middle; */
   color: yellow;
   background: url(./cat.png) no-repeat;
+  height:400px;
+  width: 280px;
+  /*
   height:100%;
   width: 100%;
+  */
   background-size: contain; /* <-- background size */
   background-position: center;
   display: block;
