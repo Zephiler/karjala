@@ -1,0 +1,16 @@
+{
+  "month": {
+    "january":"pakkaiskuu",
+    "february":"tuiskukuu",
+    "march":"kevätkuu",
+    "april":"šulakuu",
+    "may":"oraškuu",
+    "june":"kešäkuu",
+    "july":"heinäkuu",
+    "august":"elokuu",
+    "september":"šyyškuu",
+    "october":"šajekuu",
+    "november":"pimiekuu",
+    "december":"talvikuu"
+  }
+}

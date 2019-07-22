@@ -11,6 +11,10 @@ let seventh = document.querySelector("#seventhGridItem");
 let eighth = document.querySelector("#eighthGridItem");
 let ninth = document.querySelector("#ninthGridItem");
 
+let modal = document.querySelector(".myModal");
+let start = document.querySelector("#start_btn");
+
+
 let number = document.querySelector(".grid-containerDD").children.length;
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -52,6 +56,9 @@ window.addEventListener("DOMContentLoaded", () => {
   centerBlock.addEventListener("dragover", allowDrop);
   centerBlock.addEventListener("drop", drop);
 
+  start.addEventListener("click", ()=> {
+    modal.style.display = "none";
+  })
 
 function drag(event) {
   event.dataTransfer.setData("text", event.target.id);
@@ -72,7 +79,6 @@ function drop(event) {
   let newDiv = document.createElement("div");
   let gContainer = document.querySelector(".grid-containerDD");
   newDiv.classList.add("grid-item");
-  newDiv.style.backgroundColor = "red";
   gContainer.appendChild(newDiv);
   console.log(number);
 }
