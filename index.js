@@ -7,6 +7,7 @@ const app = express();
 app.use(express.static('public'));
 
 app.use("/", express.static(__dirname + "/pages"));
+app.use("/", express.static(__dirname + "/vocalbury"));
 //app.use("/", express.static(__dirname + "/pagestyle.css"));
 app.use("/", express.static(__dirname + "/scripts"));
 //app.use("/", express.static(__dirname + "/images"));
@@ -31,4 +32,7 @@ app.get("/dragdrop", (request, response) => {
   response.sendFile(__dirname + "/pages/page3.html");
 })
 
+app.get("/pagefour", (request, response) => {
+  response.sendFile(__dirname + "/pages/page4.html")
+})
 app.listen(5000);

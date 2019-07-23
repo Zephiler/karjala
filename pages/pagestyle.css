@@ -315,3 +315,18 @@ section {
   background: url(./milk.jpg) center center no-repeat;
   background-size: contain;
 }
+
+.mycol {
+  align-content:center;
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction:column;
+  height: 300px;
+  justify-content:center;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+}
