@@ -1,7 +1,14 @@
 let sentences = {};
-
+let temp = "/fish.png";
+let temp2 = "";
 let btn1 = document.querySelector("#paina");
-let pictureArray = ["/bear", "/dog", "/horse", "/pig", "/sheep", "/cat", "/wolf", "/fox"]
+let pictureArray = ["/bear", "/dog", "/horse", "/pig", "/sheep", "/cat", "/wolf", "/fox"];
+let guessCount = 0;
+let helperBlock = document.querySelector("#helperBlock");
+let helpNeeded = document.querySelector("#wantHelp");
+
+let helpYes = document.querySelector("#helpYes");
+let helpNo = document.querySelector("#helpNo");
 
 window.addEventListener("DOMContentLoaded", () => {
   let xhttpRequest = new XMLHttpRequest();
@@ -18,6 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 btn1.addEventListener("click", () => {
   let value = document.querySelector("#textInput1").value;
+  checkIfCorrect(value);
  /*
   console.log(sentences.animal);
   for(x in sentences.animal) {
@@ -30,56 +38,80 @@ btn1.addEventListener("click", () => {
     console.log(pictureArray[a]);
   }
   */
-  let imageNumber = getRandomInt(pictureArray.length);
-  checkIfCorrect(value, imageNumber);
+ // let imageNumber = getRandomInt(pictureArray.length);
 
 })
 
+  helpYes.addEventListener("click", () => {
+    helperBlock.style.visibility = "visible";
+    guessCount = 0;
+  });
+
+  helpNo.addEventListener("click", () => {
+    helpNeeded.style.visibility = "hidden";
+    helperBlock.style.visibility = "hidden";
+    guessCount = guessCount - 2;
+  })
+
+
 function getRandomImage() {
-//  console.log("get random image");
-//  console.log(Math.floor(Math.random() * Math.floor(pictureArray.length)) + " getRandomImage");
+  console.log("TEMP = " + temp + " TEMP2 = " + temp2);
   let startImage = Math.floor(Math.random() * Math.floor(pictureArray.length));
   let a = document.querySelector("#kuva");
   switch(startImage) {
     case 0:
       a.src = "/bear.png";
       a.value = "bear";
+      helperBlock.innerHTML = "kontie";
       break;
     case 1:
       a.src = "/dog.png";
       a.value = "dog";
+      helperBlock.innerHTML = "hurtta";
       break;
     case 2:
       a.src = "/horse.png";
       a.value = "horse";
+      helperBlock.innerHTML = "heponi";
       break;
     case 3:
       a.src = "/pig.png";
       a.value = "pig";
+      helperBlock.innerHTML = "syöttöpottši";
       break;
     case 4:
       a.src = "/sheep.png";
       a.value = "sheep";
+      helperBlock.innerHTML = "karičča";
       break;
     case 5:
       a.src = "/cat.png";
       a.value = "cat";
+      helperBlock.innerHTML = "kišša";
       break;
     case 6:
       a.src = "/wolf.png";
       a.value = "wolf";
+      helperBlock.innerHTML = "hukka";
       break;
     case 7:
       a.src = "/fox.png";
       a.value = "fox";
+      helperBlock.innerHTML = "repo";
       break;
+  }
+  temp = a.value;
+  if(temp == temp2) {
+    console.log(" INNER LOOP !!!");
+    getRandomImage();
   }
 
   a.width = 200;
   a.height = 200;
   a.alt = "kuva";
   a.style.alignSelf= "center";
-  console.log("get random image " + a.value);
+ // console.log("get random image " + a.value);
+ // console.log("TEMP = " + temp + " TEMP2 = " + temp2);
 }
 
 function getRandomInt(max) {
@@ -87,75 +119,52 @@ function getRandomInt(max) {
   return max;
 }
 
-/*
-function doSomething() {
-  let arr = [...pictureArray];
-  let c = document.createElement("div");
-  let a = document.createElement("img");
-  let b = document.querySelector(".mycol");
-  a.src = arr[0] + ".png";
-  console.log(a);
-  a.width = 100;
-  a.height = 100;
-  a.alt = "joo";
-  c.appendChild(a);
-  b.appendChild(c);
-}
-*/
-
-function checkIfCorrect(val, imNumber) {
+function checkIfCorrect(val) {
+  guessCount++;
+  temp2 = temp;
   let a = document.querySelector("#kuva");
   let input = document.querySelector("#textInput1");
-  console.log("val is " + val + " " + imNumber);
+  console.log("val is " + val);
   switch(input.value) {
     case "dog":
       a.src = "/dog.png";
+      temp = val;
       break;
     case "cat":
       a.src = "/cat.png";
+      temp = val;
       break;
     case "wolf":
       a.src = "/wolf.png";
+      temp = val;
       break;
     case "pig":
       a.src = "/pig.png";
+      temp = val;
       break;
     case "bear":
       a.src = "/bear.png";
+      temp = val;
       break;
     case "horse":
       a.src = "/horse.png";
+      temp = val;
       break;
     case "heponi":
       a.src = "/horse.png";
+      temp = val;
       break;
     case "sheep":
       a.src = "/sheep.png";
+      temp = val;
       break;
     case "fox":
       a.src = "/fox.png";
+      temp = val;
       break;
-
   }
 
-  /*
-  if(input.value == "dog") {
-    a.src = "/dog.png";
-    a.width = 200;
-    a.height = 200;
-    a.alt = "kuva";
-    a.style.alignSelf= "center";
-    input.value = "";
-  }
-  else {
-    a.src = "/cat.png";
-    a.width = 200;
-    a.height = 200;
-    a.alt = "kuva";
-    a.style.alignSelf= "center";
-    input.value = "";
-  }
-  */
+
  if(input.value == "fish") {
   a.width = 548;
   a.height = 150;
@@ -172,9 +181,18 @@ function checkIfCorrect(val, imNumber) {
  }
 
  if(val == a.value) {
+   guessCount = 0;
+   helperBlock.style.visibility = "hidden";
+   helpNeeded.style.visibility = "hidden";
+  // helperBlock.style.border = "none";
+  // helperBlock.style.background = "transparent";
    getRandomImage();
-  // return console.log("even");
-  // jeejee
  }
 
+ if(guessCount >= 3) {
+   helpNeeded.style.visibility = "visible"
+  // helperBlock.style.border = "1px solid black";
+  // helperBlock.style.background = "white";
+ }
+console.log(guessCount);
 }

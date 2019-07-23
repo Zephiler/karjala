@@ -330,3 +330,35 @@ section {
   text-align: center;
   width: 300px;
 }
+
+#helperBlock {
+  align-content:center;
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction:column;
+  height: 300px;
+  justify-content:center;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+  visibility: hidden;
+}
+
+#wantHelp {
+  align-content:center;
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction:column;
+  height: 300px;
+  justify-content:center;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+  visibility: hidden;
+}
