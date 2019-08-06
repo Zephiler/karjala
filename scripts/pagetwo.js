@@ -7,11 +7,17 @@ let temp2 = undefined;
 let clickCount = 0;
 let blockCount = pictureArray.length;
 
+let modal = document.querySelector(".myModal");
+let start = document.querySelector("#start_btn");
+
 window.addEventListener("DOMContentLoaded", () => {
   makePieces(num);
   makeWordPieces(num);
 })
 
+start.addEventListener("click", ()=> {
+  modal.style.display = "none";
+})
 
 function makePieces(num) {
   let placeToCreate = document.querySelector(".grid-container");
@@ -122,7 +128,7 @@ let countBlocks = setInterval(myTimer, 1000);
 
 function myTimer() {
   console.log(blockCount);
-  if(blockCount < 7) {
+  if(blockCount < 1) {
     stopCountingBlocks();
   }
 }
