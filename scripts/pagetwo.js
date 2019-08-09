@@ -1,5 +1,5 @@
 let pictureArray = ["/cat", "/chicken", "/cow", "/dog", "/horse", "/pig", "/rabbit", "/sheep", "/squirrel"];
-let wordArray = ["kissa", "kana", "lehma", "koira", "hevonen", "sika", "janis", "lammas", "orava" ];
+let wordArray = ["kišša", "kana", "lehmä", "hurtta", "heponi", "syöttöpottši", "jänis", "karičča", "orava" ];
 let num = pictureArray.length;
 
 let temp1 = undefined;

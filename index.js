@@ -33,6 +33,10 @@ app.get("/dragdrop", (request, response) => {
 })
 
 app.get("/pagefour", (request, response) => {
-  response.sendFile(__dirname + "/pages/page4.html")
+  response.sendFile(__dirname + "/pages/page4.html");
+})
+
+app.get("/pagefive", (req, res) => {
+  res.sendFile(__dirname + "/pages/page5.html");
 })
 app.listen(5000);

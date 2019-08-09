@@ -7,6 +7,11 @@ let modal = document.querySelector("#points_modal");
 let closeModalButton = document.querySelector("#close_modal");
 let playAgainModalButton = document.querySelector("#play_again");
 let totalPoints = document.querySelector("#total_points");
+let start = document.querySelector("#start_btn");
+
+// let myInterval = setInterval(updateTime, 500);
+let countGuesses;
+let clear_btn = document.querySelector("#clear_button");
 
 window.addEventListener('DOMContentLoaded', () => {
 //  setTimeout(function() {
@@ -34,16 +39,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
  // let d_t_s = document.querySelector("#div_to_span");
  // let input_block = document.querySelector("#blocknumbers");
-  let clear_btn = document.querySelector("#clear_button");
-//  let ok_btn = document.querySelector("#ok_btn");
 
-  // CLEAR BUTTON LOGIC
-  clear_btn.addEventListener("click", function() {
-    let arr = document.getElementsByClassName("myButton");
-    clearPoints();
-    clearBlocks();
-    releaseBlockButtons(arr);
-  })
+ /* i took this in the beginning
+  let clear_btn = document.querySelector("#clear_button");
+*/
+
+//  let ok_btn = document.querySelector("#ok_btn");
 
   // buttons to create how many blocks..
   myBtn2.addEventListener("click", function() {
@@ -52,6 +53,8 @@ window.addEventListener('DOMContentLoaded', () => {
     blockVal = document.getElementById("myBtn2").value;
     makeBlocks(blockVal);
     disableBlockButtons(arr);
+    countGuesses = setInterval(myTimer, 100);
+
   });
   myBtn3.addEventListener("click", function() {
     let arr = document.getElementsByClassName("myButton");
@@ -59,6 +62,8 @@ window.addEventListener('DOMContentLoaded', () => {
     blockVal = document.getElementById("myBtn3").value;
     makeBlocks(blockVal);
     disableBlockButtons(arr);
+    countGuesses = setInterval(myTimer, 100);
+    //setInterval(updateTime, 500);
   });
   myBtn4.addEventListener("click", function() {
     let arr = document.getElementsByClassName("myButton");
@@ -66,6 +71,8 @@ window.addEventListener('DOMContentLoaded', () => {
     blockVal = document.getElementById("myBtn4").value;
     makeBlocks(blockVal);
     disableBlockButtons(arr);
+    countGuesses = setInterval(myTimer, 100);
+   // setInterval(updateTime, 500);
   });
   myBtn5.addEventListener("click", function() {
     let arr = document.getElementsByClassName("myButton");
@@ -73,6 +80,8 @@ window.addEventListener('DOMContentLoaded', () => {
     blockVal = document.getElementById("myBtn5").value;
     makeBlocks(blockVal);
     disableBlockButtons(arr);
+    countGuesses = setInterval(myTimer, 100);
+    //setInterval(updateTime, 500);
   });
 
   playAgainModalButton.addEventListener("click", function() {
@@ -84,6 +93,8 @@ window.addEventListener('DOMContentLoaded', () => {
     hideModal();
     releaseBlockButtons(arr);
     clearBlocks();
+
+
   });
 
   closeModalButton.addEventListener("click", function() {
@@ -92,6 +103,10 @@ window.addEventListener('DOMContentLoaded', () => {
     guessCount = 0;
     rightGuessCount = 0;
     clearBlocks();
+    clearInterval(updateTime);
+    let startmodal = document.getElementById("startmodal");
+    startmodal.style.display = "block";
+    start.classList.remove("disabled");
   /*  let arr = document.getElementsByClassName("myButton");
     hideModal();
     releaseBlockButtons(arr);
@@ -102,7 +117,22 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 )
 
-setInterval(updateTime, 500);
+  // CLEAR BUTTON LOGIC
+  clear_btn.addEventListener("click", function() {
+    let arr = document.getElementsByClassName("myButton");
+    clearPoints();
+    clearBlocks();
+    releaseBlockButtons(arr);
+   // clearInterval(myInterval);
+    stopCountingGuesses();
+  })
+
+start.addEventListener("click", () => {
+  let startmodal = document.getElementById("startmodal");
+  startmodal.style.display = "none";
+})
+
+// let myInterval = setInterval(updateTime, 500);
 
 function updateTime() {
   console.log(guessCount);
@@ -112,10 +142,12 @@ function updateTime() {
   //  document.getElementById("guesses").innerHTML = "&nbsp0&nbsp";
   //  document.getElementById("allGuesses").innerHTML = "&nbsp0&nbsp";
     let m = document.querySelector("#points_modal");
-    total_points.innerHTML = "Your points: " + rightGuessCount + " / " + guessCount;
+    total_points.innerHTML = "Sinun pisteesi: " + rightGuessCount + " / " + guessCount;
+    total_points.style.fontSize = "20px";
     m.style.display = "block";
-  //  guessCount = 0;
-  //  rightGuessCount = 0;
+    guessCount = 0;
+    rightGuessCount = 0;
+    //clearInterval(this);
   }
 }
 
@@ -124,6 +156,8 @@ function clearPoints() {
   guessCount = 0;
   document.getElementById("guesses").innerHTML = "&nbsp0&nbsp";
   document.getElementById("allGuesses").innerHTML = "&nbsp0&nbsp";
+  clearInterval(updateTime);
+  //setInterval(updateTime, 500);
 }
 
 function disableBlockButtons(arr) {
@@ -278,8 +312,8 @@ function clickBlock(block) {
     */
   }
  // checkPoints(guessCount);
-  console.log("guessCount: " + rightGuessCount);
-  console.log("rightGuessCount: " + guessCount);
+  console.log("guessCount: " + guessCount);
+  console.log("rightGuessCount: " + rightGuessCount);
 }
 
 function checkPoints(p) {
@@ -400,6 +434,27 @@ function makeBlocks(number) {
  function hideModal() {
   modal.style.display = "none";
  }
+
+
+// let countGuesses = setInterval(myTimer, 500);
+
+function myTimer() {
+  console.log(guessCount);
+  if(guessCount >= 10) {
+      let m = document.querySelector("#points_modal");
+      total_points.innerHTML = "Sinun pisteesi: " + rightGuessCount + " / " + guessCount;
+      total_points.style.fontSize = "20px";
+      m.style.display = "block";
+      guessCount = 0;
+      rightGuessCount = 0;
+    stopCountingGuesses();
+  }
+}
+
+function stopCountingGuesses() {
+  console.log("STOP!");
+  clearInterval(countGuesses);
+}
 
 // below ones used to be under DOMContenctLoaded function
 

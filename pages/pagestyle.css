@@ -33,6 +33,28 @@ div {
   width: 100%;
   text-align: center;
 }
+
+/*  this is not necessary!  */
+.fill {
+  overflow: hidden;
+  background-size: auto;
+  background-position: center;
+  background-image: url(./karelia_image.png);
+  width: 100%;
+  padding: 20px;
+  height: 500px;
+  background-repeat: no-repeat;
+
+}
+
+.mydiv {
+  background-image: url(./k_image.png);
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
 /*
 .myrow >.grid-container {
   display: grid;
@@ -113,12 +135,16 @@ div {
 }
 
 .myButton {
-  background-color: rgb(90, 90, 252);
+  /* background-color: rgb(90, 90, 252); */
   border-radius: 5px;
-  height: 5%;
- /* width: 7%; */
+  height: 100px;
+  width: 100px;
+ /* height: 5%;
+ //below one was in comments
+  width: 7%; */
   padding: 5px 10px;
   margin: 5px auto;
+  font-size: 22px;
 }
 .myInput {
   width: 100%;

@@ -16,7 +16,7 @@
     <!--<link rel="stylesheet" href="../pagestyle.css">-->
     <title>Karelian project</title>
 </head>
-<body>
+<body style="background: #888">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/">
@@ -42,6 +42,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/pagefour">Page 4</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/pagefive">Page 5</a>
+      </li>
     </ul>
   </div>
 </nav>
@@ -62,25 +65,39 @@
     </ul>
   </div>
 -->
+<div class="myrow">
+    <div class="myModal" id="startmodal">
+      <div class="modal_content">
+        <h1>Viikonpäivät - pelin ohjeet:</h1>
+        <br>
+        <h5>Pelin tarkoitus on löytää oikea sanamuoto viikonpäivälle. Peli arpoo jonkin viikonpäivän, ja antaa vaihtoehdoksi vähintään yhden oikean ja yhden väärän vaihtoehdon.
+           Voit valita, haluatko etsiä oikean sanan kahden, kolmen, neljän vai viiden sanavaihtoehdon joukosta. Sinulla on 10 arvausta, oikeasta arvauksesta saat yhden pisteen. Maksimipistemäärä on 10 / 10.
+        </h5>
+        <button class="myButton" id="start_btn">Aloita</button>
+      </div>
+    </div>
+  </div>
 
   <div id="points_modal">
     <div class="modal_content">
-      <h1>modal</h1>
+      <h1>Peli päättyi!</h1>
+      <br>
       <p id="total_points"></p>
+      <br>
 
 
-      <button id="play_again">Again!</button>
-      <button id="close_modal">X</button>
+      <button id="play_again">Koitan uudelleen!</button>
+      <button id="close_modal">Ei kiitos</button>
     </div>
   </div>
 
   <section style="display: block; text-align: center; margin: auto; padding: 20px;">
-    <div>How many blocks do you want?</div>
+    <div>Montako sanavaihtoehtoa?</div>
       <br>
-        <button class="myButton" id="myBtn2" value=2>2</button>
-        <button class="myButton" id="myBtn3" value=3>3</button>
-        <button class="myButton" id="myBtn4" value=4>4</button>
-        <button class="myButton" id="myBtn5" value=5>5</button>
+        <button class="myButton btn-success" id="myBtn2" value=2>2</button>
+        <button class="myButton btn-success" id="myBtn3" value=3>3</button>
+        <button class="myButton btn-success" id="myBtn4" value=4>4</button>
+        <button class="myButton btn-success" id="myBtn5" value=5>5</button>
       <br>
     <div>
       <!-- <input class="myInput" type="text" id="blocknumbers" placeholder="numbres between 2 - 4"/> -->
@@ -88,10 +105,12 @@
       <div id="div_to_span"></div>
         <br>
     <!--  <button id="ok_btn">OK!</button> -->
-      <button id="clear_button">Clear</button>
-    </div>
+      <button id="clear_button" class="btn-warning" style="border-radius: 5px;">Tyhjennä</button>
 
+    </div>
+    <br><br>
     <div class="myrow" style="justify-content: center">
+        <br><br>
       <p style="font-weight: bold; font-size: 22px;">Arvaukset: &nbsp;</p>
       <p id="guesses" style="font-weight: bold; font-size: 22px;" value=0>&nbsp;0&nbsp;</p>
       <p style="font-weight: bold; font-size: 22px;">/</p>
@@ -121,7 +140,7 @@
   <section id="main">
   </section>
 
-  <div class="footer">footer</div>
+  <div class="footer" style="height: 50px; background-color:rgb(164,18,36);"><div class="mydiv"></div></div>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
