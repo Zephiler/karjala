@@ -33,6 +33,28 @@ div {
   width: 100%;
   text-align: center;
 }
+
+/*  this is not necessary!  */
+.fill {
+  overflow: hidden;
+  background-size: auto;
+  background-position: center;
+  background-image: url(./karelia_image.png);
+  width: 100%;
+  padding: 20px;
+  height: 500px;
+  background-repeat: no-repeat;
+
+}
+
+.mydiv {
+  background-image: url(./k_image.png);
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
 /*
 .myrow >.grid-container {
   display: grid;
@@ -88,23 +110,41 @@ div {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+.myModal {
+
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  margin-bottom: 100px;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
 .modal_content {
   background-color: #fefefe;
   border: 1px solid #888;
   border-radius: 10px;
-  margin: 15% auto;
+  /* margin: 15% auto; */
   padding: 20px;
   text-align: center;
   width: 80%;
+  margin-top: 10px;
 }
 
 .myButton {
-  background-color: rgb(90, 90, 252);
+  /* background-color: rgb(90, 90, 252); */
   border-radius: 5px;
-  height: 5%;
-  width: 7%;
+  height: 100px;
+  width: 100px;
+ /* height: 5%;
+ //below one was in comments
+  width: 7%; */
   padding: 5px 10px;
   margin: 5px auto;
+  font-size: 22px;
 }
 .myInput {
   width: 100%;
@@ -235,15 +275,18 @@ section {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  /*
   width: 20%;
   height: 100px;
-
+  */
 }
 .grid-containerDD  #firstGridItem {
 /*  vertical-align: middle; */
   color: yellow;
 /*  background: url(./cat.png) no-repeat; */
-  background: url(./chicken.png) no-repeat;
+  background: url(./chicken.png) center center no-repeat;
   background-size: contain;
   text-align: center;
   display: block;
@@ -254,42 +297,95 @@ section {
  /*  vertical-align: middle; */
   color: yellow;
   background: url(./cat.png) no-repeat;
+  height:400px;
+  width: 280px;
+  /*
   height:100%;
   width: 100%;
+  */
   background-size: contain; /* <-- background size */
   background-position: center;
   display: block;
 }
 .grid-item.item3 {
-  background: url(./rabbit.png) no-repeat;
+  background: url(./rabbit.png) center center no-repeat;
   background-size: contain;
   display: block;
 }
 
 .grid-item.item4 {
-    background: url(./dog.png) no-repeat;
+    background: url(./dog.png) center center no-repeat;
     background-size: contain;
 }
 
 .grid-item.item5 {
-  background: url(./cow2.png) no-repeat;
+  background: url(./stringball.jpg) center center no-repeat;
   background-size: contain;
 }
+
 
 .grid-item.item6 {
-  background: url(./pig.png) no-repeat;
+  background: url(./fish.png) center center no-repeat;
   background-size: contain;
 }
 
+
 .grid-item.item7{
-  background: url(./cat.png) no-repeat;
+  background: url(./cat.png) center center no-repeat;
   background-size: contain;
 }
 .grid-item.item8{
-  background: url(./sheep.png) no-repeat;
+  background: url(./catbrush.jpg) center center no-repeat;
   background-size: contain;
 }
 .grid-item.item9{
-  background: url(./squirrel.png) no-repeat;
+  background: url(./milk.jpg) center center no-repeat;
   background-size: contain;
+}
+
+.mycol {
+  align-content:center;
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction:column;
+  height: 300px;
+  justify-content:center;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+#helperBlock {
+  align-content:center;
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction:column;
+  height: 300px;
+  justify-content:center;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+  visibility: hidden;
+}
+
+#wantHelp {
+  align-content:center;
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction:column;
+  height: 300px;
+  justify-content:center;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+  visibility: hidden;
 }

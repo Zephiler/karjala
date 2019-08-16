@@ -14,13 +14,47 @@
   <link rel="stylesheet" href="../pagestyle.css">
   <title>Karelian project</title>
 </head>
-<body style="background:blue;">
+<body style="background: #888">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">
+    Karelian project
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" 
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+      aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/weekdays">Weekdays Game</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/pickablock" onclick="return false">Pick-a-block Game</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/dragdrop">Drag & Drop Game</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/pagefour">Page 4</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/pagefive">Page 5</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!--
   <div class="header">
     <ul>
       <li><a href="/"><i class="fa fa-angle-double-left"></i></a></li>
       <li><a href="/weekdays">Weekdays Game</a></li>
       <li><a href="/pickablock" onclick="return false">Pick-a-block Game</a></li>
       <li><a href="/dragdrop">Drag & Drop Game</a></li>
+      <li><a href="/pagefour">Page 4</a></li>
     </ul>
 
     <ul style="float:right;">
@@ -28,7 +62,22 @@
       <li>viena</li>
     </ul>
   </div>
-  <div class="myrow" style="background-color:blue; height:15%;"></div>
+-->
+<!-- new one -->
+  <div class="myrow">
+    <div class="myModal">
+      <div class="modal_content">
+        <h1>Pick-a-Block pelin ohjeet:</h1>
+        <br>
+        <h5>Valitse oikealta tai vasemmalta puolen ruutua laatikko, jota painamalla "aktivoit" kyseisen laatikon. 
+          Sille pitää etsiä vastine, sana tai kuva. Esimerkiksi painamalla kanan kuvaa sinun pitää etsiä "kanaa" tarkoittava sana. 
+        Sana-laatikkoa painamalla sinun pitää etsiä kyseisen sanan kuvake.</h5>
+        <button class="myButton" id="start_btn">Aloita</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="myrow" style="height:15%;"></div>
 
   <div class="myrow">
     <section id="main" style="width: 50%;">
@@ -41,11 +90,13 @@
     </section>
   </div>
 
+  <!--
   <div class="myrow">
     <div class="centered">modal here</div>
   </div>
+-->
 
-  <div class="footer">footer</div>
+<div class="footer" style="height: 50px; background-color:rgb(164,18,36);"><div class="mydiv"></div></div>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 

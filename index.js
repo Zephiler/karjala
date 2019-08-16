@@ -4,12 +4,10 @@ const url = require('url');
 
 const app = express();
 
-
-//app.use(express.static('public'));  may have to open..
-
 app.use(express.static('public'));
 
 app.use("/", express.static(__dirname + "/pages"));
+app.use("/", express.static(__dirname + "/vocalbury"));
 //app.use("/", express.static(__dirname + "/pagestyle.css"));
 app.use("/", express.static(__dirname + "/scripts"));
 //app.use("/", express.static(__dirname + "/images"));
@@ -34,4 +32,11 @@ app.get("/dragdrop", (request, response) => {
   response.sendFile(__dirname + "/pages/page3.html");
 })
 
+app.get("/pagefour", (request, response) => {
+  response.sendFile(__dirname + "/pages/page4.html");
+})
+
+app.get("/pagefive", (req, res) => {
+  res.sendFile(__dirname + "/pages/page5.html");
+})
 app.listen(5000);
