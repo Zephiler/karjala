@@ -10,8 +10,13 @@ let seventh = document.querySelector("#seventhGridItem");
 let eighth = document.querySelector("#eighthGridItem");
 let ninth = document.querySelector("#ninthGridItem");
 
+let gridContainer = document.getElementById("gridContainer");
+
 let modal = document.querySelector(".myModal");
 let start = document.querySelector("#start_btn");
+let endModal = document.querySelector(".endModal");
+let againButton = document.querySelector("#playAgain");
+let notAgainButton = document.querySelector("#dontPlayAgain");
 
 let rText = document.getElementById("randomText");
 let qText = document.getElementById("questionText");
@@ -21,8 +26,8 @@ let qText = document.getElementById("questionText");
 let startQuestion;
 let correct = 0;
 
-let gridArr = ["firstGridItem","thirdGridItem","fourthGridItem",
-  "fifthGridItem","sixthGridItem","seventhGridItem", "eighthGridItem", "ninthGridItem"];
+let gridArr = ["firstGridItem", "thirdGridItem", "fourthGridItem",
+  "fifthGridItem", "sixthGridItem", "seventhGridItem", "eighthGridItem", "ninthGridItem"];
 
 window.addEventListener("DOMContentLoaded", () => {
   qText.innerHTML = "";
@@ -36,47 +41,62 @@ window.addEventListener("DOMContentLoaded", () => {
   giveRandomWord(gridArr);
 })
 
-  first.addEventListener("dragover", allowDrop);
-  first.addEventListener("drop", drop);
-  first.addEventListener("dragstart", drag);
+first.addEventListener("dragover", allowDrop);
+first.addEventListener("drop", drop);
+first.addEventListener("dragstart", drag);
 
-  third.addEventListener("dragover", allowDrop);
-  third.addEventListener("drop", drop);
-  third.addEventListener("dragstart", drag);
+third.addEventListener("dragover", allowDrop);
+third.addEventListener("drop", drop);
+third.addEventListener("dragstart", drag);
 
-  fourth.addEventListener("dragover", allowDrop);
-  fourth.addEventListener("drop", drop);
-  fourth.addEventListener("dragstart", drag);
+fourth.addEventListener("dragover", allowDrop);
+fourth.addEventListener("drop", drop);
+fourth.addEventListener("dragstart", drag);
 
-  fifth.addEventListener("dragover", allowDrop);
-  fifth.addEventListener("drop", drop);
-  fifth.addEventListener("dragstart", drag);
+fifth.addEventListener("dragover", allowDrop);
+fifth.addEventListener("drop", drop);
+fifth.addEventListener("dragstart", drag);
 
-  sixth.addEventListener("dragover", allowDrop);
-  sixth.addEventListener("drop", drop);
-  sixth.addEventListener("dragstart", drag);
+sixth.addEventListener("dragover", allowDrop);
+sixth.addEventListener("drop", drop);
+sixth.addEventListener("dragstart", drag);
 
-  seventh.addEventListener("dragover", allowDrop);
-  seventh.addEventListener("drop", drop);
-  seventh.addEventListener("dragstart", drag);
+seventh.addEventListener("dragover", allowDrop);
+seventh.addEventListener("drop", drop);
+seventh.addEventListener("dragstart", drag);
 
-  eighth.addEventListener("dragover", allowDrop);
-  eighth.addEventListener("drop", drop);
-  eighth.addEventListener("dragstart", drag);
+eighth.addEventListener("dragover", allowDrop);
+eighth.addEventListener("drop", drop);
+eighth.addEventListener("dragstart", drag);
 
-  ninth.addEventListener("dragover", allowDrop);
-  ninth.addEventListener("drop", drop);
-  ninth.addEventListener("dragstart", drag);
+ninth.addEventListener("dragover", allowDrop);
+ninth.addEventListener("drop", drop);
+ninth.addEventListener("dragstart", drag);
 
-  centerBlock.addEventListener("dragover", allowDrop);
-  centerBlock.addEventListener("drop", drop);
+centerBlock.addEventListener("dragover", allowDrop);
+centerBlock.addEventListener("drop", drop);
 
-  start.addEventListener("click", ()=> {
-    modal.style.display = "none";
-  })
+start.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+againButton.addEventListener("click", () => {
+  refresh();
+});
+
+notAgainButton.addEventListener("click", () => {
+  endModal.style.display = "none";
+})
+
+function refresh() {
+  setTimeout(function () {
+    location.reload()
+  }, 100);
+}
 
 function drag(event) {
   event.dataTransfer.setData("text", event.target.id);
+  qText.style.color = "red";  // new!!
 }
 
 function allowDrop(event) {
@@ -84,16 +104,30 @@ function allowDrop(event) {
 }
 
 function drop(event) {
+  qText.style.color = "black";
   event.preventDefault();
   let data = event.dataTransfer.getData("text");
 
- // console.log(data);  // data is the grabbed item
+  // console.log(data);  // data is the grabbed item
 
-  if(data != rText.innerHTML) {
+  if (data != rText.innerHTML) {
+    qText.style.color = "black";
     console.log("NOT equal");
+    gridContainer.style.backgroundColor = "red";
+    setTimeout(() => {
+      gridContainer.style.backgroundColor = "white";
+    }, 100);
   }
 
   else {
+    qText.style.color = "red";
+    gridContainer.style.backgroundColor = "green";
+    setTimeout(() => {
+      gridContainer.style.backgroundColor = "white";
+    }, 100);
+    setTimeout(() => {
+      qText.style.color = "black";
+    }, 1000);
     correct++;
     gridArr = gridArr.filter(e => e != data);
     console.log(gridArr);
@@ -104,72 +138,103 @@ function drop(event) {
     let gContainer = document.querySelector(".grid-containerDD");
     newDiv.classList.add("grid-item");
     gContainer.appendChild(newDiv);
-    
+
     giveRandomWord(gridArr);
+    /*
+    setTimeout(() => {
+      giveRandomWord(gridArr);
+    }, 1000);
+    */
+
   }
 }
 
 function giveRandomWord(amount) {
-  for(let i = 0; i < amount.length; i++) {
+  for (let i = 0; i < amount.length; i++) {
     startQuestion = getRandomInt(amount.length);
     rText.innerHTML = amount[startQuestion]; //.id
   }
 
-  switch(rText.innerHTML) {
+  switch (rText.innerHTML) {
     case "firstGridItem":
       console.log("chicken");
       qText.innerHTML = "tahtoisin kanaa";
-      if(correct == 8) {
-        qText.innerHTML = "kiitos!";
+      if (correct == 8) {
+        setTimeout(function () {
+          qText.innerHTML = "kiitos!";
+          endModal.style.display = "block";
+        }, 1000)
+
       }
       break;
     case "thirdGridItem":
       console.log("rabbit");
       qText.innerHTML = "tahtoisin jänistä";
-      if(correct == 8) {
-        qText.innerHTML = "kiitos!";
+      if (correct == 8) {
+        setTimeout(function () {
+          qText.innerHTML = "kiitos!";
+          endModal.style.display = "block";
+        }, 1000)
       }
       break;
     case "fourthGridItem":
       console.log("dog");
       qText.innerHTML = "en pidä koirista";
-      if(correct == 8) {
-        qText.innerHTML = "kiitos!";
+      if (correct == 8) {
+        setTimeout(function () {
+          qText.innerHTML = "kiitos!";
+          endModal.style.display = "block";
+        }, 1000)
       }
       break;
     case "fifthGridItem":
       console.log("string");
       qText.innerHTML = "tahtoisin leikkiä langalla";
-      if(correct == 8) {
-        qText.innerHTML = "kiitos!";
+      if (correct == 8) {
+        setTimeout(function () {
+          qText.innerHTML = "kiitos!";
+          endModal.style.display = "block";
+        }, 1000)
       }
       break;
     case "sixthGridItem":
       console.log("fish");
       qText.innerHTML = "tahtoisin kalaa";
-      if(correct == 8) {
-        qText.innerHTML = "kiitos!";
+      if (correct == 8) {
+        setTimeout(function () {
+          qText.innerHTML = "kiitos!";
+          endModal.style.display = "block";
+        }, 1000)
       }
       break;
     case "seventhGridItem":
       console.log("cat");
       qText.innerHTML = "tahtoisin leikkikaverin";
-      if(correct == 8) {
-        qText.innerHTML = "kiitos!";
+      if (correct == 8) {
+        setTimeout(function () {
+          qText.innerHTML = "kiitos!";
+          endModal.style.display = "block";
+        }, 1000)
       }
       break;
     case "eighthGridItem":
       console.log("harja");
       qText.innerHTML = "tahtoisin harjata";
-      if(correct == 8) {
-        qText.innerHTML = "kiitos!";
+      if (correct == 8) {
+        setTimeout(function () {
+          qText.innerHTML = "kiitos!";
+          endModal.style.display = "block";
+        }, 1000)
       }
       break;
     case "ninthGridItem":
       console.log("milk");
       qText.innerHTML = "tahtoisin maitoa";
-      if(correct == 8) {
-        qText.innerHTML = "kiitos!";
+      if (correct == 8) {
+        setTimeout(function () {
+          qText.innerHTML = "kiitos!";
+          endModal.style.display = "block";
+        }, 1000)
       }
       break;
   }

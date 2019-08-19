@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -9,7 +10,7 @@ body, html {
   align-items: center;
 }
 
-.myrow >.centered {
+.myrow>.centered {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10%;
@@ -55,13 +56,14 @@ div {
   width: 100%;
   height: 100%;
 }
+
 /*
 .myrow >.grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
 }
 */
-.section >.grid-container {
+.section>.grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
 }
@@ -90,7 +92,8 @@ div {
   width: 100%;
 }
 
-.header ul, .header ul li{
+.header ul,
+.header ul li {
   list-style: none;
   padding: 0px 15px;
   vertical-align: middle;
@@ -99,28 +102,56 @@ div {
 
 #points_modal {
   display: none;
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   margin-bottom: 100px;
   text-align: center;
   height: 100%;
   width: 100%;
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
 .myModal {
 
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   margin-bottom: 100px;
   text-align: center;
   height: 100%;
   width: 100%;
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.endModal {
+  display: none;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  margin-bottom: 100px;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
 .modal_content {
@@ -139,19 +170,20 @@ div {
   border-radius: 5px;
   height: 100px;
   width: 100px;
- /* height: 5%;
+  /* height: 5%;
  //below one was in comments
   width: 7%; */
   padding: 5px 10px;
   margin: 5px auto;
   font-size: 22px;
 }
+
 .myInput {
   width: 100%;
 }
 
 .myBox {
-  background: rgb(204, 218, 214); 
+  background: rgb(204, 218, 214);
   border: 2px solid black;
   border-radius: 5px;
   display: inline-block;
@@ -210,7 +242,7 @@ div {
 }
 
 .myBox_orange {
-  background: rgb(204, 218, 214); 
+  background: rgb(204, 218, 214);
   border: 2px solid black;
   border-radius: 5px;
   box-shadow: 0px 0px 4px 4px rgb(255, 95, 3);
@@ -222,7 +254,7 @@ div {
 }
 
 .myBox_green {
-  background: rgb(204, 218, 214); 
+  background: rgb(204, 218, 214);
   border: 2px solid black;
   border-radius: 5px;
   box-shadow: 0px 0px 4px 4px rgb(53, 255, 3);
@@ -269,7 +301,8 @@ section {
   font-size: 50px;
   text-align: center;
   border: 1px solid black;
-  background-size: auto; /* <-- background size */
+  background-size: auto;
+  /* <-- background size */
   background-position: center;
   display: block;
   margin-left: auto;
@@ -282,10 +315,11 @@ section {
   height: 100px;
   */
 }
-.grid-containerDD  #firstGridItem {
-/*  vertical-align: middle; */
+
+.grid-containerDD #firstGridItem {
+  /*  vertical-align: middle; */
   color: yellow;
-/*  background: url(./cat.png) no-repeat; */
+  /*  background: url(./cat.png) no-repeat; */
   background: url(./chicken.png) center center no-repeat;
   background-size: contain;
   text-align: center;
@@ -293,20 +327,23 @@ section {
   margin-left: auto;
   margin-right: auto;
 }
-.grid-containerDD  #secondGridItem {
- /*  vertical-align: middle; */
+
+.grid-containerDD #secondGridItem {
+  /*  vertical-align: middle; */
   color: yellow;
   background: url(./cat.png) no-repeat;
-  height:400px;
+  height: 400px;
   width: 280px;
   /*
   height:100%;
   width: 100%;
   */
-  background-size: contain; /* <-- background size */
+  background-size: contain;
+  /* <-- background size */
   background-position: center;
   display: block;
 }
+
 .grid-item.item3 {
   background: url(./rabbit.png) center center no-repeat;
   background-size: contain;
@@ -314,8 +351,8 @@ section {
 }
 
 .grid-item.item4 {
-    background: url(./dog.png) center center no-repeat;
-    background-size: contain;
+  background: url(./dog.png) center center no-repeat;
+  background-size: contain;
 }
 
 .grid-item.item5 {
@@ -330,28 +367,30 @@ section {
 }
 
 
-.grid-item.item7{
+.grid-item.item7 {
   background: url(./cat.png) center center no-repeat;
   background-size: contain;
 }
-.grid-item.item8{
+
+.grid-item.item8 {
   background: url(./catbrush.jpg) center center no-repeat;
   background-size: contain;
 }
-.grid-item.item9{
+
+.grid-item.item9 {
   background: url(./milk.jpg) center center no-repeat;
   background-size: contain;
 }
 
 .mycol {
-  align-content:center;
+  align-content: center;
   background: white;
   border: 1px solid black;
   border-radius: 10px;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   height: 300px;
-  justify-content:center;
+  justify-content: center;
   margin: 10px;
   padding: 10px;
   text-align: center;
@@ -359,14 +398,14 @@ section {
 }
 
 #helperBlock {
-  align-content:center;
+  align-content: center;
   background: white;
   border: 1px solid black;
   border-radius: 10px;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   height: 300px;
-  justify-content:center;
+  justify-content: center;
   margin: 10px;
   padding: 10px;
   text-align: center;
@@ -375,14 +414,14 @@ section {
 }
 
 #wantHelp {
-  align-content:center;
+  align-content: center;
   background: white;
   border: 1px solid black;
   border-radius: 10px;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   height: 300px;
-  justify-content:center;
+  justify-content: center;
   margin: 10px;
   padding: 10px;
   text-align: center;
