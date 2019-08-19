@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,47 +8,47 @@
   <link rel="icon" href="/images/karjalaicon.gif">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
     integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="../pagestyle.css">
   <title>Karelian project</title>
 </head>
-<body style="background:rgb(70, 240, 217);">
-<!-- <body style="background: #888"> -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">
-    Karelian project
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" 
-      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-      aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/weekdays">Weekdays Game</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/pickablock">Pick-a-block Game</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/dragdrop" onclick="return false">Drag & Drop Game</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/pagefour">Page 4</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/pagefive">Page 5</a>
-      </li>
-    </ul>
-  </div>
-</nav>
 
-<!--
+<body style="background:rgb(70, 240, 217);">
+  <!-- <body style="background: #888"> -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+      Karelian project
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/weekdays">Weekdays Game</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pickablock">Pick-a-block Game</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/dragdrop" onclick="return false">Drag & Drop Game</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pagefour">Page 4</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pagefive">Page 5</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--
   <div class="header">
     <ul>
       <li><a href="/"><i class="fa fa-angle-double-left"></i></a></li>
@@ -69,7 +70,13 @@
       <div class="modal_content">
         <h1>DRAG And DROP</h1>
         <br>
-        <h3>ohjeita pelaamiseen</h3>
+        <h3>Ohjeita pelaamiseen</h3>
+        <br>
+        <h5>Pelin tarkoitus on raahata ja pudottaa se tietty palikka kissan luokse.</h5>
+        <h5>Peli antaa vihjeen siitä, mikä palikka on kyseessä.</h5>
+        <h5>
+          Pelissä ei ole aikarajoitusta eikä pisteitä lasketa.
+        </h5>
         <button class="myButton" id="start_btn">Aloita</button>
       </div>
     </div>
@@ -85,7 +92,7 @@
     <div class="grid-containerDD" style="background: white; position: static;">
       <div class="grid-item item1" id="firstGridItem" draggable="true"></div>
       <div class="grid-item item2" id="secondGridItem"></div>
-      <div class="grid-item item3" id="thirdGridItem" draggable="true"></div>  
+      <div class="grid-item item3" id="thirdGridItem" draggable="true"></div>
       <div class="grid-item item4" id="fourthGridItem" draggable="true"></div>
       <div class="grid-item item5" id="fifthGridItem" draggable="true"></div>
       <div class="grid-item item6" id="sixthGridItem" draggable="true"></div>
@@ -95,13 +102,19 @@
     </div>
   </div>
   <p id="randomText" style="visibility: hidden"></p>
-  <div class="footer" style="height: 50px; background-color:rgb(164,18,36);"><div class="mydiv"></div></div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <div class="footer" style="height: 50px; background-color:rgb(164,18,36);">
+    <div class="mydiv"></div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
   <script src="../pagethree.js"></script>
 </body>
+
 </html>
