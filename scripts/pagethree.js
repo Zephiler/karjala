@@ -1,7 +1,6 @@
-// console.log("page three");
 let centerBlock = document.querySelector("#secondGridItem");
 let first = document.querySelector("#firstGridItem");
-// let second = document.querySelector("#secondGridItem");
+
 let third = document.querySelector("#thirdGridItem");
 let fourth = document.querySelector("#fourthGridItem");
 let fifth = document.querySelector("#fifthGridItem");
@@ -21,8 +20,6 @@ let notAgainButton = document.querySelector("#dontPlayAgain");
 let rText = document.getElementById("randomText");
 let qText = document.getElementById("questionText");
 
-//let gridArr = document.querySelectorAll(".grid-item");
-//let arr1 = [];
 let startQuestion;
 let correct = 0;
 
@@ -31,13 +28,6 @@ let gridArr = ["firstGridItem", "thirdGridItem", "fourthGridItem",
 
 window.addEventListener("DOMContentLoaded", () => {
   qText.innerHTML = "";
-
-  /*
-  for(let y = 0; y < gridArr.length; y++) {
-    arr1.push(gridArr[y]);
-}
- arr1.splice(1,1);
-*/
   giveRandomWord(gridArr);
 })
 
@@ -140,12 +130,6 @@ function drop(event) {
     gContainer.appendChild(newDiv);
 
     giveRandomWord(gridArr);
-    /*
-    setTimeout(() => {
-      giveRandomWord(gridArr);
-    }, 1000);
-    */
-
   }
 }
 
@@ -244,45 +228,3 @@ function getRandomInt(max) {
   max = Math.floor(Math.random() * Math.floor(max));
   return max;
 }
-
-/*
-function createGridBlocks() {
-  let placeToCreate = document.querySelector(".grid-container");
-  for(let i = 0; i < num; i++) {
-    let spanGridBlock = document.createElement("div");
-    spanGridBlock.style.height = "100px";
-    spanGridBlock.style.width = "100px";
-    spanGridBlock.style.margin = "10px";
-    spanGridBlock.style.border = "1px solid black";
-    placeToCreate.appendChild(spanGridBlock);
-    if(i == 1) {
-      spanGridBlock.classList.add("second");
-      console.log("kakkonen");
-    }
-  }
-}
-*/
-
-/*  working code, just for back-up
-
-function drop(event) {
-  event.preventDefault();
-  let data = event.dataTransfer.getData("text");
-  console.log(data);  // data is the grabbed item
-
-  if(data == rText.innerHTML) {
-    console.log("equal");
-  }
-
-  event.target.appendChild(document.getElementById(data));
-  event.target.removeChild(document.getElementById(data));
-
-  let newDiv = document.createElement("div");
-  let gContainer = document.querySelector(".grid-containerDD");
-  newDiv.classList.add("grid-item");
-  gContainer.appendChild(newDiv);
-
-}
-
-
-*/
