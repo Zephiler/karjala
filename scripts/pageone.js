@@ -4,20 +4,24 @@ let guessCount = 0;
 let rightGuessCount = 0;
 let blockVal = 0;
 let modal = document.querySelector("#points_modal");
+let aModal = document.querySelector("#aModal");
 let closeModalButton = document.querySelector("#close_modal");
 let playAgainModalButton = document.querySelector("#play_again");
 let totalPoints = document.querySelector("#total_points");
 let start = document.querySelector("#start_btn");
-
+let resImg = document.getElementById("resImage");
+let resText = document.getElementById("result");
+let res_div = document.querySelector("#arvaukset");
 // let myInterval = setInterval(updateTime, 500);
 let countGuesses;
 let clear_btn = document.querySelector("#clear_button");
+let info = document.querySelector("#info");
 
 window.addEventListener('DOMContentLoaded', () => {
-//  setTimeout(function() {
+  //  setTimeout(function() {
 
   let xhttpReg = new XMLHttpRequest();
-  xhttpReg.onreadystatechange = function() {
+  xhttpReg.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       weekdays = JSON.parse(this.responseText);
     }
@@ -29,118 +33,154 @@ window.addEventListener('DOMContentLoaded', () => {
   let myBtn3 = document.querySelector("#myBtn3");
   let myBtn4 = document.querySelector("#myBtn4");
   let myBtn5 = document.querySelector("#myBtn5");
- // let modal = document.querySelector("#points_modal");
- // let closeModalButton = document.querySelector("#close_modal");
+  // let modal = document.querySelector("#points_modal");
+  // let closeModalButton = document.querySelector("#close_modal");
 
-//  let guesses = document.getElementById("guesses");
-//  let allguesses = document.getElementById("allGuesses");
-//  let wordToFind = document.getElementById("theDay");
-//  let mainDiv = document.getElementById("main");
+  //  let guesses = document.getElementById("guesses");
+  //  let allguesses = document.getElementById("allGuesses");
+  //  let wordToFind = document.getElementById("theDay");
+  //  let mainDiv = document.getElementById("main");
 
- // let d_t_s = document.querySelector("#div_to_span");
- // let input_block = document.querySelector("#blocknumbers");
+  // let d_t_s = document.querySelector("#div_to_span");
+  // let input_block = document.querySelector("#blocknumbers");
 
- /* i took this in the beginning
-  let clear_btn = document.querySelector("#clear_button");
-*/
+  /* i took this in the beginning
+   let clear_btn = document.querySelector("#clear_button");
+ */
+  res_div.style.display = "none";
 
-//  let ok_btn = document.querySelector("#ok_btn");
+  info.addEventListener("mouseenter", function () {
+    document.getElementById("startmodal").style.display = "block";
+  })
+
+  info.addEventListener("mouseleave", function () {
+    document.getElementById("startmodal").style.display = "none";
+  })
+
+  //  let ok_btn = document.querySelector("#ok_btn");
 
   // buttons to create how many blocks..
-  myBtn2.addEventListener("click", function() {
+  myBtn2.addEventListener("click", function () {
+    res_div.style.display = "block";
     let arr = document.getElementsByClassName("myButton");
     clearBlocks();
     blockVal = document.getElementById("myBtn2").value;
     makeBlocks(blockVal);
     disableBlockButtons(arr);
+    hideDivs();
     countGuesses = setInterval(myTimer, 100);
 
   });
-  myBtn3.addEventListener("click", function() {
+  myBtn3.addEventListener("click", function () {
+    res_div.style.display = "block";
     let arr = document.getElementsByClassName("myButton");
     clearBlocks();
     blockVal = document.getElementById("myBtn3").value;
     makeBlocks(blockVal);
     disableBlockButtons(arr);
+    hideDivs();
     countGuesses = setInterval(myTimer, 100);
     //setInterval(updateTime, 500);
   });
-  myBtn4.addEventListener("click", function() {
+  myBtn4.addEventListener("click", function () {
+    res_div.style.display = "block";
     let arr = document.getElementsByClassName("myButton");
     clearBlocks();
     blockVal = document.getElementById("myBtn4").value;
     makeBlocks(blockVal);
     disableBlockButtons(arr);
+    hideDivs();
     countGuesses = setInterval(myTimer, 100);
-   // setInterval(updateTime, 500);
+    // setInterval(updateTime, 500);
   });
-  myBtn5.addEventListener("click", function() {
+  /*
+  myBtn5.addEventListener("click", function () {
     let arr = document.getElementsByClassName("myButton");
     clearBlocks();
     blockVal = document.getElementById("myBtn5").value;
     makeBlocks(blockVal);
     disableBlockButtons(arr);
+    hideDivs();
     countGuesses = setInterval(myTimer, 100);
     //setInterval(updateTime, 500);
   });
-
-  playAgainModalButton.addEventListener("click", function() {
+*/
+  playAgainModalButton.addEventListener("click", function () {
     let arr = document.getElementsByClassName("myButton");
     guessCount = 0;
     rightGuessCount = 0;
     document.getElementById("guesses").innerHTML = "&nbsp0&nbsp";
     document.getElementById("allGuesses").innerHTML = "&nbsp0&nbsp";
+
     hideModal();
+    showDivs();
     releaseBlockButtons(arr);
     clearBlocks();
 
-
+    start.classList.remove("disabled");
   });
 
-  closeModalButton.addEventListener("click", function() {
+  closeModalButton.addEventListener("click", function () {
     console.log("close modal");
     hideModal();
     guessCount = 0;
     rightGuessCount = 0;
     clearBlocks();
     clearInterval(updateTime);
-    let startmodal = document.getElementById("startmodal");
-    startmodal.style.display = "block";
-    start.classList.remove("disabled");
-  /*  let arr = document.getElementsByClassName("myButton");
-    hideModal();
-    releaseBlockButtons(arr);
-    clearBlocks();
-    */
+    document.getElementById("mainBox2").style.display = "none"; // uusi
+    //let startmodal = document.getElementById("startmodal");
+    //startmodal.style.display = "block";
+
+    /*  let arr = document.getElementsByClassName("myButton");
+      hideModal();
+      releaseBlockButtons(arr);
+      clearBlocks();
+      */
   });
 
-  }
+}
 )
 
-  // CLEAR BUTTON LOGIC
-  clear_btn.addEventListener("click", function() {
-    let arr = document.getElementsByClassName("myButton");
-    clearPoints();
-    clearBlocks();
-    releaseBlockButtons(arr);
-   // clearInterval(myInterval);
-    stopCountingGuesses();
-  })
+// CLEAR BUTTON LOGIC
+clear_btn.addEventListener("click", function () {
+  res_div.style.display = "none";
+  let arr = document.getElementsByClassName("myButton");
+  clearPoints();
+  clearBlocks();
+  releaseBlockButtons(arr);
+  // clearInterval(myInterval);
+  stopCountingGuesses();
+  clear_btn.style.display = "none";
+})
 
 start.addEventListener("click", () => {
   let startmodal = document.getElementById("startmodal");
   startmodal.style.display = "none";
 })
 
-// let myInterval = setInterval(updateTime, 500);
+
+function hideDivs() {
+
+  // document.querySelector("#first_div").style.display = "none";
+  document.querySelector("#mainBox").style.display = "none";
+  document.querySelector("#mainBox2").style.display = "block";
+  // document.querySelector("#second_div").style.display = "none";
+}
+
+function showDivs() {
+  // document.querySelector("#first_div").style.display = "block";
+  document.querySelector("#mainBox").style.display = "block";
+  document.querySelector("#mainBox2").style.display = "none";
+  // document.querySelector("#second_div").style.display = "block";
+}
 
 function updateTime() {
   console.log(guessCount);
-  if(guessCount >= 10) {
+  if (guessCount >= 10) {
     // console.log(guessCount);
-  //  alert(" funkkari ")
-  //  document.getElementById("guesses").innerHTML = "&nbsp0&nbsp";
-  //  document.getElementById("allGuesses").innerHTML = "&nbsp0&nbsp";
+    //  alert(" funkkari ")
+    //  document.getElementById("guesses").innerHTML = "&nbsp0&nbsp";
+    //  document.getElementById("allGuesses").innerHTML = "&nbsp0&nbsp";
     let m = document.querySelector("#points_modal");
     total_points.innerHTML = "Sinun pisteesi: " + rightGuessCount + " / " + guessCount;
     total_points.style.fontSize = "20px";
@@ -157,6 +197,7 @@ function clearPoints() {
   document.getElementById("guesses").innerHTML = "&nbsp0&nbsp";
   document.getElementById("allGuesses").innerHTML = "&nbsp0&nbsp";
   clearInterval(updateTime);
+  showDivs();
   //setInterval(updateTime, 500);
 }
 
@@ -167,7 +208,7 @@ function disableBlockButtons(arr) {
 }
 
 function releaseBlockButtons(arr) {
-  for(let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     arr[i].classList.remove("disabled");
   }
 }
@@ -189,7 +230,7 @@ function randomDayFunc(x, y) {
   let randomLanguage = "";
   let result1 = Math.floor(Math.random() * 5) + 1;
 
-  switch(result1) {
+  switch (result1) {
     case 1:
       randomLanguage = x.viikko;
       break;
@@ -208,22 +249,22 @@ function randomDayFunc(x, y) {
   }
 
   // check what is the correct word
-  if(y == 0) console.log(x.netäli.monday);
-  if(y == 1) console.log(x.netäli.tuesday);
-  if(y == 2) console.log(x.netäli.wednesday);
-  if(y == 3) console.log(x.netäli.thursday);
-  if(y == 4) console.log(x.netäli.friday);
-  if(y == 5) console.log(x.netäli.saturday);
-  if(y == 6) console.log(x.netäli.sunday);
+  if (y == 0) console.log(x.netäli.monday);
+  if (y == 1) console.log(x.netäli.tuesday);
+  if (y == 2) console.log(x.netäli.wednesday);
+  if (y == 3) console.log(x.netäli.thursday);
+  if (y == 4) console.log(x.netäli.friday);
+  if (y == 5) console.log(x.netäli.saturday);
+  if (y == 6) console.log(x.netäli.sunday);
 
   // 
-  if(y == 0) return randomLanguage.monday;
-  if(y == 1) return randomLanguage.tuesday;
-  if(y == 2) return randomLanguage.wednesday;
-  if(y == 3) return randomLanguage.thursday;
-  if(y == 4) return randomLanguage.friday;
-  if(y == 5) return randomLanguage.saturday;
-  if(y == 6) return randomLanguage.sunday;
+  if (y == 0) return randomLanguage.monday;
+  if (y == 1) return randomLanguage.tuesday;
+  if (y == 2) return randomLanguage.wednesday;
+  if (y == 3) return randomLanguage.thursday;
+  if (y == 4) return randomLanguage.friday;
+  if (y == 5) return randomLanguage.saturday;
+  if (y == 6) return randomLanguage.sunday;
 
 }
 
@@ -232,70 +273,79 @@ function clickBlock(block) {
   let guess = false;
   let rightGuesses = document.getElementById("guesses");
   let guesses = document.getElementById("allGuesses");
-  let words = ["ensiarki","tiistaini","keskiarki","nelläsarki","piätinkkä","lauantaini","sunnuntaini",
-                "maanantaini","toinearki","kekimmäiniarki","neljäspäivä","piätäntšä","suovatta","pyhäpiävä"];
+  let words = ["ensiarki", "tiistaini", "keskiarki", "nelläsarki", "piätinkkä", "lauantaini", "sunnuntaini",
+    "maanantaini", "toinearki", "kekimmäiniarki", "neljäspäivä", "piätäntšä", "suovatta", "pyhäpiävä"];
   let finnish = ["maanantai", "tiistai", "keskiviikko", "torstai", "perjantai", "lauantai", "sunnuntai"];
 
-  let vienaWords = ["enšiarki","toiniarki","serota","nelläšpäivä","piätinččä","šuovatta","pyhäpäivä"];
+  let vienaWords = ["enšiarki", "toiniarki", "serota", "nelläšpäivä", "piätinččä", "šuovatta", "pyhäpäivä"];
   let engWords = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
-  let falseWords = ["ensimmäiniarki","toisimmainiarki","serokkaini","nelläspäivä","piätintčä","šuovata","pyhätšä"]
+  let falseWords = ["ensimmäiniarki", "toisimmainiarki", "serokkaini", "nelläspäivä", "piätintčä", "šuovata", "pyhätšä"]
 
   block.classList.add("myBox_green");
   setTimeout(() => {
     block.classList.remove("myBox_green");
   }, 200);
 
-  for(let i = 0; i < words.length; i++) {
-    if(block.innerHTML == words[i]) {
+  for (let i = 0; i < words.length; i++) {
+    if (block.innerHTML == words[i]) {
       guess = false;
     }
   }
-  for(let i = 0; i < finnish.length; i++) {
-    if(block.innerHTML == finnish[i]) {
+  for (let i = 0; i < finnish.length; i++) {
+    if (block.innerHTML == finnish[i]) {
       guess = false;
     }
   }
-  for(let i = 0; i < vienaWords.length; i++) {
-    if(block.innerHTML == vienaWords[i]) {
+  for (let i = 0; i < vienaWords.length; i++) {
+    if (block.innerHTML == vienaWords[i]) {
       guess = true;
     }
   }
-  for(let i = 0; i < engWords.length; i++) {
-    if(block.innerHTML == engWords[i]) {
+  for (let i = 0; i < engWords.length; i++) {
+    if (block.innerHTML == engWords[i]) {
       guess = false;
     }
   }
-  for(let i = 0; i < falseWords.length; i++) {
-    if(block.innerHTML == falseWords[i]) {
+  for (let i = 0; i < falseWords.length; i++) {
+    if (block.innerHTML == falseWords[i]) {
       guess = false;
     }
   }
 
-  if(guess) {
+  if (guess) {
     ++guessCount;
     ++rightGuessCount;
     guesses.innerHTML = "&nbsp" + guessCount + "&nbsp";
-    rightGuesses.innerHTML = "&nbsp" + rightGuessCount + "&nbsp"; 
+    rightGuesses.innerHTML = "&nbsp" + rightGuessCount + "&nbsp";
+    aModal.style.display = "block";
+    resText.innerHTML = "Oikein!";
+    resImg.classList.add("result_img_correct");
 
-   /* if(guessCount >= 10 || rightGuessCount >= 10) {
-      guessCount = 0;
-      rightGuessCount = 0;
-      guesses.innerHTML = "&nbsp" + guessCount + "&nbsp";
-      rightGuesses.innerHTML = "&nbsp" + rightGuessCount + "&nbsp";
-      alert("All guesses made"); 
-      releaseBlockButtons(arr);
-      clearBlocks();
-      clearPoints();
-    } 
+    /*   TÄÄ AUKI!! */
+    setTimeout(() => {
+      aModal.style.display = "none";
+      resImg.classList.remove("result_img_correct");
+    }, 500);/* */
 
-    else {
-     // rightGuessCount++;
-     // guessCount++;
-      rightGuesses.innerHTML = "&nbsp" + rightGuessCount + "&nbsp";
-      guesses.innerHTML = "&nbsp" + guessCount + "&nbsp";
-      clearBlocks();
-      makeBlocks(blockVal);
-    } */
+    /* if(guessCount >= 10 || rightGuessCount >= 10) {
+       guessCount = 0;
+       rightGuessCount = 0;
+       guesses.innerHTML = "&nbsp" + guessCount + "&nbsp";
+       rightGuesses.innerHTML = "&nbsp" + rightGuessCount + "&nbsp";
+       alert("All guesses made"); 
+       releaseBlockButtons(arr);
+       clearBlocks();
+       clearPoints();
+     } 
+ 
+     else {
+      // rightGuessCount++;
+      // guessCount++;
+       rightGuesses.innerHTML = "&nbsp" + rightGuessCount + "&nbsp";
+       guesses.innerHTML = "&nbsp" + guessCount + "&nbsp";
+       clearBlocks();
+       makeBlocks(blockVal);
+     } */
     clearBlocks();
     makeBlocks(blockVal);
   }
@@ -303,21 +353,30 @@ function clickBlock(block) {
   else {
     ++guessCount;
     guesses.innerHTML = "&nbsp" + guessCount + "&nbsp";
-   /* if(guessCount == 10 || rightGuessCount == 10) {   
-      releaseBlockButtons(arr);
-      clearBlocks();
-      clearPoints();
-      alert("guessCount: " + guessCount);
-    }
-    */
+
+    aModal.style.display = "block";
+    resText.innerHTML = "Väärin!";
+    resImg.classList.add("result_img_not_correct");
+
+    setTimeout(() => {
+      aModal.style.display = "none";
+      resImg.classList.remove("result_img_not_correct");
+    }, 500);
+    /* if(guessCount == 10 || rightGuessCount == 10) {   
+       releaseBlockButtons(arr);
+       clearBlocks();
+       clearPoints();
+       alert("guessCount: " + guessCount);
+     }
+     */
   }
- // checkPoints(guessCount);
+  // checkPoints(guessCount);
   console.log("guessCount: " + guessCount);
   console.log("rightGuessCount: " + rightGuessCount);
 }
 
 function checkPoints(p) {
-  if(p == 10) {
+  if (p == 10) {
     console.log("checkPoints");
   }
 }
@@ -332,15 +391,16 @@ function outOfBlock(block) {
 
 function shuffleBlocks() {
   let blockCount = document.getElementById("main");
-  for(let i = blockCount.children.length; i >= 0; i--) {
+  for (let i = blockCount.children.length; i >= 0; i--) {
     blockCount.appendChild(blockCount.children[Math.random() * i | 0]);
   }
 }
 
 function clearBlocks() {
   let d_t_s = document.querySelector("#div_to_span");
-//  let rightGuesses = document.getElementById("guesses");
-//  let guesses = document.getElementById("allGuesses");
+  clear_btn.style.display = "block";
+  //  let rightGuesses = document.getElementById("guesses");
+  //  let guesses = document.getElementById("allGuesses");
 
   document.getElementById("theDay").innerHTML = "";
   randomIntDay = 0;
@@ -348,105 +408,105 @@ function clearBlocks() {
   // input_block.value = "";
   let e = document.querySelector("#main");
   let c = e.lastChild;
-    while(c) {
-      e.removeChild(c);
-      c = e.lastChild;
-    }
+  while (c) {
+    e.removeChild(c);
+    c = e.lastChild;
+  }
 }
 
 function makeBlocks(number) {
- // console.log(document.getElementById(number));
+  // console.log(document.getElementById(number));
   let num = number;
   let wordToFind = document.getElementById("theDay");
   let mainDiv = document.getElementById("main");
   randomIntDay = getRandomInt(7);
-  if(randomIntDay == 0) wordToFind.innerHTML = "Maanantai";
-  if(randomIntDay == 1) wordToFind.innerHTML = "Tiistai";
-  if(randomIntDay == 2) wordToFind.innerHTML = "Keskiviikko";
-  if(randomIntDay == 3) wordToFind.innerHTML = "Torstai";
-  if(randomIntDay == 4) wordToFind.innerHTML = "Perjantai";
-  if(randomIntDay == 5) wordToFind.innerHTML = "Lauantai";
-  if(randomIntDay == 6) wordToFind.innerHTML = "Sunnuntai";
+  if (randomIntDay == 0) wordToFind.innerHTML = "Maanantai";
+  if (randomIntDay == 1) wordToFind.innerHTML = "Tiistai";
+  if (randomIntDay == 2) wordToFind.innerHTML = "Keskiviikko";
+  if (randomIntDay == 3) wordToFind.innerHTML = "Torstai";
+  if (randomIntDay == 4) wordToFind.innerHTML = "Perjantai";
+  if (randomIntDay == 5) wordToFind.innerHTML = "Lauantai";
+  if (randomIntDay == 6) wordToFind.innerHTML = "Sunnuntai";
 
   wordToFind.style.fontWeight = "bold";
   wordToFind.style.fontSize = "22px";
 
   //  in for loop we make sure that there is one correct and one false answer, 
   //  if 2 blocks selected, the blocks created in loop won't be added at all.
-  for(let i = 0; (i < number -2); i++) {
+  for (let i = 0; (i < number - 2); i++) {
     let spanBlock = document.createElement("p");
     spanBlock.innerHTML = randomDayFunc(weekdays, randomIntDay);
     spanBlock.classList.add("myBox");
-    spanBlock.addEventListener("click", function() {
+    spanBlock.addEventListener("click", function () {
       clickBlock(this, num);
     });
-    spanBlock.addEventListener("mouseenter", function() {
+    spanBlock.addEventListener("mouseenter", function () {
       hoverBlock(this);
     });
-    spanBlock.addEventListener("mouseleave", function() {
+    spanBlock.addEventListener("mouseleave", function () {
       outOfBlock(this);
     });
     mainDiv.appendChild(spanBlock)[i];
   }
   let correctBlock = document.createElement("p");
-  if(wordToFind.innerHTML == "Maanantai") correctBlock.innerHTML = "enšiarki";
-  if(wordToFind.innerHTML == "Tiistai") correctBlock.innerHTML = "toiniarki";
-  if(wordToFind.innerHTML == "Keskiviikko") correctBlock.innerHTML = "serota";
-  if(wordToFind.innerHTML == "Torstai") correctBlock.innerHTML = "nelläšpäivä";
-  if(wordToFind.innerHTML == "Perjantai") correctBlock.innerHTML = "piätinččä";
-  if(wordToFind.innerHTML == "Lauantai") correctBlock.innerHTML = "šuovatta";
-  if(wordToFind.innerHTML == "Sunnuntai") correctBlock.innerHTML = "pyhäpäivä";
+  if (wordToFind.innerHTML == "Maanantai") correctBlock.innerHTML = "enšiarki";
+  if (wordToFind.innerHTML == "Tiistai") correctBlock.innerHTML = "toiniarki";
+  if (wordToFind.innerHTML == "Keskiviikko") correctBlock.innerHTML = "serota";
+  if (wordToFind.innerHTML == "Torstai") correctBlock.innerHTML = "nelläšpäivä";
+  if (wordToFind.innerHTML == "Perjantai") correctBlock.innerHTML = "piätinččä";
+  if (wordToFind.innerHTML == "Lauantai") correctBlock.innerHTML = "šuovatta";
+  if (wordToFind.innerHTML == "Sunnuntai") correctBlock.innerHTML = "pyhäpäivä";
   correctBlock.classList.add("myBox");
-  correctBlock.addEventListener("click", function() {
+  correctBlock.addEventListener("click", function () {
     clickBlock(this);
   });
-  correctBlock.addEventListener("mouseenter", function() {
+  correctBlock.addEventListener("mouseenter", function () {
     hoverBlock(this);
   });
-  correctBlock.addEventListener("mouseleave", function() {
+  correctBlock.addEventListener("mouseleave", function () {
     outOfBlock(this);
   });
   mainDiv.appendChild(correctBlock);
 
   let falseBlock = document.createElement("p");
-  if(wordToFind.innerHTML == "Maanantai") falseBlock.innerHTML = "ensimmäiniarki";
-  if(wordToFind.innerHTML == "Tiistai") falseBlock.innerHTML = "toisimmainiarki";
-  if(wordToFind.innerHTML == "Keskiviikko") falseBlock.innerHTML = "serokkaini";
-  if(wordToFind.innerHTML == "Torstai") falseBlock.innerHTML = "nelläspäivä";
-  if(wordToFind.innerHTML == "Perjantai") falseBlock.innerHTML = "piätintčä";
-  if(wordToFind.innerHTML == "Lauantai") falseBlock.innerHTML = "šuovata";
-  if(wordToFind.innerHTML == "Sunnuntai") falseBlock.innerHTML = "pyhätšä";
+  if (wordToFind.innerHTML == "Maanantai") falseBlock.innerHTML = "ensimmäiniarki";
+  if (wordToFind.innerHTML == "Tiistai") falseBlock.innerHTML = "toisimmainiarki";
+  if (wordToFind.innerHTML == "Keskiviikko") falseBlock.innerHTML = "serokkaini";
+  if (wordToFind.innerHTML == "Torstai") falseBlock.innerHTML = "nelläspäivä";
+  if (wordToFind.innerHTML == "Perjantai") falseBlock.innerHTML = "piätintčä";
+  if (wordToFind.innerHTML == "Lauantai") falseBlock.innerHTML = "šuovata";
+  if (wordToFind.innerHTML == "Sunnuntai") falseBlock.innerHTML = "pyhätšä";
   falseBlock.classList.add("myBox");
-  falseBlock.addEventListener("click", function() {
+  falseBlock.addEventListener("click", function () {
     clickBlock(this);
   });
-  falseBlock.addEventListener("mouseenter", function() {
+  falseBlock.addEventListener("mouseenter", function () {
     hoverBlock(this);
   });
-  falseBlock.addEventListener("mouseleave", function() {
+  falseBlock.addEventListener("mouseleave", function () {
     outOfBlock(this);
   });
   mainDiv.appendChild(falseBlock);
 
   shuffleBlocks();
- }
+}
 
- function hideModal() {
+function hideModal() {
   modal.style.display = "none";
- }
+}
 
 
 // let countGuesses = setInterval(myTimer, 500);
 
 function myTimer() {
   console.log(guessCount);
-  if(guessCount >= 10) {
-      let m = document.querySelector("#points_modal");
-      total_points.innerHTML = "Sinun pisteesi: " + rightGuessCount + " / " + guessCount;
-      total_points.style.fontSize = "20px";
-      m.style.display = "block";
-      guessCount = 0;
-      rightGuessCount = 0;
+  if (guessCount >= 10) {
+    let m = document.querySelector("#points_modal");
+    total_points.innerHTML = "Sinun pisteesi: " + rightGuessCount + " / " + guessCount;
+    total_points.style.fontSize = "20px";
+    m.style.display = "block";
+    guessCount = 0;
+    rightGuessCount = 0;
     stopCountingGuesses();
   }
 }
@@ -480,28 +540,28 @@ function stopCountingGuesses() {
 })
 */
   // this block should work OK
-  /*
-  let myBtn = document.getElementById("paina");
-    myBtn.addEventListener("click", function painettu() {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          //document.getElementById("koe").innerHTML =
-          //this.responseText;
-          let x = JSON.parse(this.responseText);
-          console.log(x);
-          document.getElementById("koe").innerHTML = x.netäli.monday + " " + x.week.monday + " " + x.viikkoni.monday + " " + x.netällli.monday;
-        }
-      };
-      xhttp.open("GET", "week.json", true);
-      xhttp.send();
-    })
+/*
+let myBtn = document.getElementById("paina");
+  myBtn.addEventListener("click", function painettu() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //document.getElementById("koe").innerHTML =
+        //this.responseText;
+        let x = JSON.parse(this.responseText);
+        console.log(x);
+        document.getElementById("koe").innerHTML = x.netäli.monday + " " + x.week.monday + " " + x.viikkoni.monday + " " + x.netällli.monday;
+      }
+    };
+    xhttp.open("GET", "week.json", true);
+    xhttp.send();
+  })
 
-  let kokeilu = document.querySelector("#kokeilu");
-    kokeilu.addEventListener("click", () => {
-      console.log(randomLanguage());
-    })
-    */
+let kokeilu = document.querySelector("#kokeilu");
+  kokeilu.addEventListener("click", () => {
+    console.log(randomLanguage());
+  })
+  */
 
 
   // I shold check this block..
@@ -516,7 +576,7 @@ function stopCountingGuesses() {
         x.appendChild(t);
         d_t_s.appendChild(x);
       }
-    } 
+    }
   }) */
 
 
@@ -577,43 +637,43 @@ function randomWord() {
     case 0:
       return weekdays.viikko.monday;
     case 1:
-      return weekdays.viikko.tuesday; 
+      return weekdays.viikko.tuesday;
     case 2:
-      return weekdays.viikko.wednesday; 
+      return weekdays.viikko.wednesday;
     case 3:
-      return weekdays.viikko.thursday; 
+      return weekdays.viikko.thursday;
     case 4:
-      return weekdays.viikko.friday; 
+      return weekdays.viikko.friday;
     case 5:
-      return weekdays.viikko.saturday; 
+      return weekdays.viikko.saturday;
     case 6:
-      return weekdays.viikko.sunday; 
+      return weekdays.viikko.sunday;
   }
   return x;
 }
 */
-  /*
-  function clearBlocks() {
-    document.getElementById("theDay").innerHTML = "";
-    randomIntDay = 0;
-    d_t_s.innerHTML = "";
-    // input_block.value = "";
-    let e = document.querySelector("#main");
-    let c = e.lastChild;
-      while(c) {
-        e.removeChild(c);
-        c = e.lastChild;
-      }
-  }
-  */
- 
-  /**   else {
-    guessCount++;
-  }
-  guesses.innerHTML = guessCount;
+/*
+function clearBlocks() {
+  document.getElementById("theDay").innerHTML = "";
+  randomIntDay = 0;
+  d_t_s.innerHTML = "";
+  // input_block.value = "";
+  let e = document.querySelector("#main");
+  let c = e.lastChild;
+    while(c) {
+      e.removeChild(c);
+      c = e.lastChild;
+    }
+}
+*/
 
-  if(guessCount == 10) {
-    alert("arvaukset tehty")
-    clearBlocks();
-    guessCount = 0;
-  } */
+/**   else {
+  guessCount++;
+}
+guesses.innerHTML = guessCount;
+
+if(guessCount == 10) {
+  alert("arvaukset tehty")
+  clearBlocks();
+  guessCount = 0;
+} */

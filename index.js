@@ -22,6 +22,14 @@ app.get("/weekdays", (request, response) => {
   response.sendFile(__dirname + "/pages/page1.html");
 });
 
+app.get("/muistipeli", (req, res) => {
+  res.sendFile(__dirname + "/pages/memory.html");
+})
+
+app.get("/crosswords", (req, res) => {
+  res.sendFile(__dirname + "/pages/crossword1.html");
+})
+
 app.get("/pickablock", (request, response) => {
   console.log("pickablock game");
   response.sendFile(__dirname + "/pages/page2.html");

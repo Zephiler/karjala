@@ -19,6 +19,7 @@ let notAgainButton = document.querySelector("#dontPlayAgain");
 
 let rText = document.getElementById("randomText");
 let qText = document.getElementById("questionText");
+let bubble = document.getElementById("bubble");
 
 let startQuestion;
 let correct = 0;
@@ -29,6 +30,14 @@ let gridArr = ["firstGridItem", "thirdGridItem", "fourthGridItem",
 window.addEventListener("DOMContentLoaded", () => {
   qText.innerHTML = "";
   giveRandomWord(gridArr);
+})
+
+info.addEventListener("mouseenter", function () {
+  document.getElementById("startmodal").style.display = "block";
+})
+
+info.addEventListener("mouseleave", function () {
+  document.getElementById("startmodal").style.display = "none";
 })
 
 first.addEventListener("dragover", allowDrop);
@@ -86,36 +95,51 @@ function refresh() {
 
 function drag(event) {
   event.dataTransfer.setData("text", event.target.id);
-  qText.style.color = "red";  // new!!
+  // qText.style.color = "white";  // new!!
+  bubble.style.visibility = "hidden";
 }
 
 function allowDrop(event) {
   event.preventDefault();
+  //qText.style.color = "black";
+  bubble.style.visibility = "hidden";
 }
 
 function drop(event) {
-  qText.style.color = "black";
+  //qText.style.color = "black";
   event.preventDefault();
   let data = event.dataTransfer.getData("text");
+  bubble.style.visibility = "hidden";
 
   // console.log(data);  // data is the grabbed item
 
   if (data != rText.innerHTML) {
-    qText.style.color = "black";
+    //qText.style.color = "black";
+    //bubble.style.visibility = "visible";
     console.log("NOT equal");
     gridContainer.style.backgroundColor = "red";
+    document.querySelector("body").style.background = "red";
     setTimeout(() => {
-      gridContainer.style.backgroundColor = "white";
-    }, 100);
+      gridContainer.style.backgroundColor = "transparent";
+      document.querySelector("body").style.background = "#C0EAF7";
+    }, 200);
+
+    setTimeout(() => {
+      bubble.style.visibility = "visible";
+      qText.style.color = "red";
+    }, 1000);
   }
 
   else {
-    qText.style.color = "red";
+    // qText.style.color = "red";
     gridContainer.style.backgroundColor = "green";
+    document.querySelector("body").style.background = "green";
     setTimeout(() => {
-      gridContainer.style.backgroundColor = "white";
+      gridContainer.style.backgroundColor = "transparent";
+      document.querySelector("body").style.background = "#C0EAF7";
     }, 100);
     setTimeout(() => {
+      bubble.style.visibility = "visible";
       qText.style.color = "black";
     }, 1000);
     correct++;
@@ -127,6 +151,7 @@ function drop(event) {
     let newDiv = document.createElement("div");
     let gContainer = document.querySelector(".grid-containerDD");
     newDiv.classList.add("grid-item");
+    newDiv.style.backgroundColor = "transparent";
     gContainer.appendChild(newDiv);
 
     giveRandomWord(gridArr);
