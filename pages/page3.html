@@ -12,64 +12,87 @@
     integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="../pagestyle.css">
+  <link rel="stylesheet" href="../pagestyle3.css">
   <title>Karelian project</title>
 </head>
 
-<body style="background:rgb(70, 240, 217);">
-  <!-- <body style="background: #888"> -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">
+<body style="background: #C0EAF7">
+  <!--  #888 -->
+  <!-- rgb(213,0,0) punainen,  rgb(0,170,255) sininen, rgb(0,128,0) vihreä -->
+  <nav class="navbar navbar-expand-lg" style="background-color: #ededed; border-bottom: 1px solid red;">
+    <a class="navbar-brand" href="/" style="color: rgb(213, 0, 0)">
       Karelian project
+    </a>
+    <a class="navbar-brand" style="float: right" href="/" onclick="return false">
+      <span class="fa fa-question-circle" id="info" style="color: rgb(213, 0, 0)"><small> Pelin ohjeet</small></span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <!-- <span class="navbar-toggler-icon text-danger"></span> -->
+      <span class="fa fa-bars fa-xs" style="color: rgb(213, 0, 0)"></span>
+
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/weekdays">Weekdays Game</a>
+        <!--
+          <li class="nav-item">
+            <a class="nav-link" href="/weekdays" onclick="return false">Weekdays Game</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pickablock">Pick-a-block Game</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dragdrop">Drag & Drop Game</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pagefour">Page 4</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pagefive">Page 5</a>
+          </li>
+          -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown1" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Sanapelit
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdown1">
+            <a class="dropdown-item" href="/weekdays">Viikonpäivät</a>
+            <a class="dropdown-item" href="/crosswords">Sanaristikko</a>
+            <a class="dropdown-item" href="#">kolmaspeli</a>
+          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pickablock">Pick-a-block Game</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown2" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Laatikkopelit
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdown2">
+            <a class="dropdown-item" href="/pickablock">Valitse sana ja palikka</a>
+            <a class="dropdown-item" href="/muistipeli">Muistipeli</a>
+            <a class="dropdown-item" href="#">kolmaspeli</a>
+          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/dragdrop" onclick="return false">Drag & Drop Game</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pagefour">Page 4</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pagefive">Page 5</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown3" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Laatikkopelit
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdown3">
+            <a class="dropdown-item" href="/dragdrop" onclick="return false">Yhdistä sana ja kuva</a>
+            <a class="dropdown-item" href="#">tokapeli</a>
+            <a class="dropdown-item" href="#">kolmaspeli</a>
+          </div>
         </li>
       </ul>
     </div>
   </nav>
 
-  <!--
-  <div class="header">
-    <ul>
-      <li><a href="/"><i class="fa fa-angle-double-left"></i></a></li>
-      <li><a href="/weekdays">Weekdays Game</a></li>
-      <li><a href="/pickablock">Pick-a-block Game</a></li>
-      <li><a href="/dragdrop" onclick="return false">Drag & Drop Game</a></li>
-      <li><a href="/pagefour">Page 4</a></li>
-    </ul>
-
-    <ul style="float:right;">
-      <li>fi</li>
-      <li>viena</li>
-    </ul>
-  </div>
--->
 
   <div class="myrow">
-    <div class="myModal">
+    <div class="myModal" id="startmodal" style="display: none;">
       <div class="modal_content">
-        <h1>DRAG And DROP</h1>
-        <br>
         <h3>Ohjeita pelaamiseen</h3>
         <br>
         <h5>Pelin tarkoitus on raahata ja pudottaa se tietty palikka kissan luokse.</h5>
@@ -77,7 +100,7 @@
         <h5>
           Pelissä ei ole aikarajoitusta eikä pisteitä lasketa.
         </h5>
-        <button class="myButton" id="start_btn">Aloita</button>
+        <button class="myButton" id="start_btn" style="display: none;">Aloita</button>
       </div>
     </div>
 
@@ -96,14 +119,22 @@
 
   </div>
 
-  <div class="myrow" style="margin-left: 20%; margin-right: 20%; background-color: red;
+  <div class="myrow" style="margin-left: 20%; margin-right: 20%;
      justify-content: center; text-align: center; vertical-align: middle;">
+    <div class="container" id="bubble">
+      <img src="./omakupla2.png" width="250px" height="130px" alt="kuva">
+      <div class="centered">
+        <p id="questionText"></p>
+      </div>
+    </div>
 
-    <p id="questionText"></p>
+
   </div>
 
-  <div class="myrow" style="margin-left: 20%; margin-right: 20%; margin-top: 20px; justify-content: center;">
-    <div class="grid-containerDD" id="gridContainer" style="background: white; position: static;">
+
+
+  <div class="myrow" style="margin-left: 20%; margin-right: 20%; justify-content: center;">
+    <div class="grid-containerDD" id="gridContainer" style="position: static; margin-top: -15px; border-radius: 10px;">
       <div class="grid-item item1" id="firstGridItem" draggable="true"></div>
       <div class="grid-item item2" id="secondGridItem"></div>
       <div class="grid-item item3" id="thirdGridItem" draggable="true"></div>
@@ -116,9 +147,11 @@
     </div>
   </div>
   <p id="randomText" style="visibility: hidden"></p>
+  <!--
   <div class="footer" style="height: 50px; background-color:rgb(164,18,36);">
     <div class="mydiv"></div>
   </div>
+  -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
   </script>
@@ -132,3 +165,21 @@
 </body>
 
 </html>
+
+
+<!--
+  <div class="header">
+    <ul>
+      <li><a href="/"><i class="fa fa-angle-double-left"></i></a></li>
+      <li><a href="/weekdays">Weekdays Game</a></li>
+      <li><a href="/pickablock">Pick-a-block Game</a></li>
+      <li><a href="/dragdrop" onclick="return false">Drag & Drop Game</a></li>
+      <li><a href="/pagefour">Page 4</a></li>
+    </ul>
+
+    <ul style="float:right;">
+      <li>fi</li>
+      <li>viena</li>
+    </ul>
+  </div>
+-->
