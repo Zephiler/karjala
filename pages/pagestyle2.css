@@ -1,0 +1,616 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+div {
+    display: inline-block;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.footer {
+    background: rgb(61, 53, 68);
+    bottom: 0;
+    /* height: 5%; */
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}
+
+.mydiv {
+    background-image: url(./k_image.png);
+    background-repeat: repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.myModal {
+
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    margin-bottom: 100px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.endModal {
+    display: none;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    margin-bottom: 100px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.modal_content {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 10px;
+    /* margin: 15% auto; */
+    /* padding: 20px; */
+    text-align: center;
+    width: 90%;
+    /* 80%  */
+    margin-top: 10px;
+}
+
+.myButton {
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px auto;
+    font-size: 20px;
+}
+
+.myBox {
+    background: rgb(204, 218, 214);
+    border: 2px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    height: 3%;
+    margin: auto;
+    padding: 20px;
+
+}
+
+.myImageBox {
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0px 0px;
+    margin: 5px;
+    background: white;
+}
+
+.myWordBox {
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 40px 0px;
+    margin: 5px;
+    background: white;
+}
+
+.myWordBox_selected {
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 40px 0px;
+    margin: 5px;
+    background: red;
+    /*   margin: 10px 5px auto; */
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+
+/*
+.myWordBox {
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    justify-content: center;
+    padding: 30% 0;
+    margin: 10px 10px;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+*/
+.myImageBox_selected {
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0px 0px;
+    margin: 5px;
+    background: red;
+    /*   margin: 10px 5px auto; */
+}
+
+/*
+.myWordBox {
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    justify-content: center;
+    padding: 30% 0;
+    margin: 10px 10px;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+*/
+/*
+.myWordBox_selected {
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    justify-content: center;
+    padding: 30% 0;
+    margin: 10px 10px;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid red;
+}
+*/
+.myBox_orange {
+    background: rgb(204, 218, 214);
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 4px rgb(255, 95, 3);
+    display: inline-block;
+    height: 3%;
+    margin: auto;
+    padding: 20px;
+}
+
+.myBox_green {
+    background: rgb(204, 218, 214);
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 4px rgb(53, 255, 3);
+    display: inline-block;
+    height: 3%;
+    margin: auto;
+    padding: 20px;
+}
+
+.myrow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+#upperRow {
+    display: block;
+    height: 2.5%;
+}
+
+.mainDiv {
+    background: #888;
+    border-radius: 10px;
+    justify-content: space-evenly;
+    margin: 5px 5px;
+    width: 35%;
+}
+
+.gridCont {
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0.1px;
+    width: -webkit-fill-available;
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1600px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    .myBox {
+        padding: 12px;
+        display: inline-block;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    .myModal {
+        background: rebeccapurple;
+    }
+
+    .answerModal {
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        background: #888;
+        margin-top: 30px;
+    }
+
+    .modal_content {
+        background-color: #fefefe;
+        border: 1px solid #888;
+        border-radius: 10px;
+        /* margin: 15% auto; */
+        padding: 20px;
+        text-align: center;
+        font-size: 20px;
+        width: 420px;
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1000px) {
+
+    .myImageBox,
+    .myWordBox {
+        width: 100px;
+        height: 100px;
+        /*  font-size: 14px; */
+    }
+
+    .myImageBox_selected,
+    .myWordBox_selected {
+        width: 100px;
+        height: 100px;
+    }
+
+    .myWordBox,
+    .myWordBox_selected {
+        padding: 30px 0px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    .myWordBox,
+    .myWordBox_selected {
+        padding: 30px 0px;
+    }
+
+    .myBox {
+        padding: 10px;
+        display: inline-block;
+    }
+
+    .myModal {
+        background: rebeccapurple;
+    }
+
+    .modal_content {
+        background-color: #fefefe;
+        border: 1px solid #888;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        font-size: 20px;
+        width: 420px;
+    }
+
+    .myImageBox,
+    .myWordBox {
+        width: 80px;
+        height: 80px;
+        font-size: 10px;
+        margin: 7px;
+    }
+
+    .myImageBox_selected,
+    .myWordBox_selected {
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        justify-content: center;
+        border: 2px solid black;
+        border-radius: 10px;
+        /* padding: 0px 0px; */
+        margin: 7px;
+        font-size: 10px;
+        /*   margin: 10px 5px auto; */
+    }
+
+    #main {
+        text-align: center;
+        width: 80%;
+    }
+
+    #main-right {
+        text-align: center;
+        width: 80%;
+    }
+
+    .mainDiv {
+        background: #888;
+        border-radius: 10px;
+        justify-content: space-evenly;
+        margin: 5px auto;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
+
+    .myWordBox,
+    .myWordBox_selected {
+        padding: 20px 0px;
+    }
+
+    /*
+    .myBox {
+        padding: 4px;
+        display: inline-block;
+    }
+*/
+    .myModal {
+        position: fixed;
+        z-index: 1;
+        text-align: center;
+        /*    height: 100%;
+            width: 100%; */
+        overflow: auto;
+        background: rebeccapurple;
+        font-size: 20px;
+    }
+
+    .modal_content {
+        background-color: #fefefe;
+        border: 1px solid #888;
+        border-radius: 10px;
+        /* margin: 15% auto; */
+        /* padding: 20px; */
+        text-align: center;
+        font-size: 20px;
+        width: 340px;
+    }
+
+    .myImageBox,
+    .myWordBox {
+        width: 70px;
+        height: 70px;
+        font-size: 10px;
+        margin: 5px;
+    }
+
+    .myImageBox_selected,
+    .myWordBox_selected {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        justify-content: center;
+        border: 2px solid black;
+        border-radius: 10px;
+        /*  padding: 0px 0px; */
+        margin: 5px;
+        font-size: 10px;
+        /*   margin: 10px 5px auto; */
+    }
+
+    #main {
+        text-align: center;
+        width: 100%;
+    }
+
+    #main-right {
+        text-align: center;
+        width: 100%;
+    }
+
+    .mainDiv {
+        background: #888;
+        border-radius: 10px;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 201px) and (max-width: 400px) {
+    h1 {
+        font-size: 14px;
+    }
+
+    h5 {
+        font-size: 10px;
+    }
+
+    .myModal {
+        position: fixed;
+        z-index: 1;
+        text-align: center;
+        /*    height: 100%;
+            width: 100%; */
+        overflow: auto;
+        background: rebeccapurple;
+        font-size: 20px;
+    }
+
+    .modal_content {
+        background-color: #fefefe;
+        border: 1px solid #888;
+        border-radius: 10px;
+        /* margin: 15% auto; */
+        /* padding: 20px; */
+        text-align: center;
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .myImageBox,
+    .myWordBox {
+        width: 60px;
+        height: 60px;
+        font-size: 10px;
+        margin: 1px;
+    }
+
+    .myWordBox,
+    .myWordBox_selected {
+        padding: 20px 0px;
+    }
+
+    .myImageBox_selected,
+    .myWordBox_selected {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        justify-content: center;
+        border: 2px solid black;
+        border-radius: 10px;
+        /* padding: 0px 0px; */
+        margin: 1px;
+        font-size: 10px;
+        /*   margin: 10px 5px auto; */
+    }
+
+    #main {
+        text-align: center;
+        width: 100%;
+    }
+
+    #main-right {
+        text-align: center;
+        width: 100%;
+    }
+
+    .mainDiv {
+        background: #888;
+        border-radius: 10px;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+}
+
+
+@media screen and (min-width: 100px) and (max-width: 200px) {
+    h1 {
+        font-size: 12px;
+    }
+
+    h5 {
+        font-size: 8px;
+    }
+
+    .myModal {
+        position: fixed;
+        z-index: 1;
+        text-align: center;
+        /*    height: 100%;
+            width: 100%; */
+        overflow: auto;
+        background: rebeccapurple;
+        font-size: 20px;
+    }
+
+    .modal_content {
+        /*   */
+        background-color: #fefefe;
+        border: 1px solid #888;
+        border-radius: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .myImageBox,
+    .myWordBox {
+        width: 50px;
+        height: 50px;
+        font-size: 8px;
+        margin: 1px;
+    }
+
+    .myWordBox,
+    .myWordBox_selected {
+        padding: 15px 0px;
+    }
+
+    .myImageBox_selected,
+    .myWordBox_selected {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        justify-content: center;
+        border: 2px solid black;
+        border-radius: 10px;
+        /* padding: 0px 0px; 
+        margin: 10px; */
+        margin: 1px;
+        font-size: 8px;
+    }
+
+    .myrow {
+        display: flex;
+    }
+
+    #main {
+        text-align: center;
+        width: 100%;
+    }
+
+    #main-right {
+        text-align: center;
+        width: 100%;
+    }
+
+    .mainDiv {
+        background: #888;
+        border-radius: 10px;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+
+
+}

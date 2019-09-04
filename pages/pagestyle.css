@@ -6,6 +6,21 @@ html {
   width: 100%;
 }
 
+#koe.img {
+  /* background: url(./speech.png) center center no-repeat; */
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: red;
+  background-image: url(./speech.png);
+  background: transparent;
+}
+
+
 .center {
   align-items: center;
 }
@@ -28,7 +43,7 @@ div {
 .footer {
   background: rgb(61, 53, 68);
   bottom: 0;
-  height: 5%;
+  /* height: 5%; */
   padding: 5px;
   position: fixed;
   width: 100%;
@@ -136,6 +151,52 @@ div {
   /* Black w/ opacity */
 }
 
+.answerModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  text-align: center;
+  font-size: 18px;
+  height: 50%;
+  width: 50%;
+  overflow: auto;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 10%;
+  align-content: center;
+}
+
+.result_img {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.result_img_correct {
+  background: url(./thumb_up.png) center center no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.result_img_not_correct {
+  background: url(./sadface.png) center center no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .endModal {
   display: none;
   position: fixed;
@@ -159,23 +220,26 @@ div {
   border: 1px solid #888;
   border-radius: 10px;
   /* margin: 15% auto; */
-  padding: 20px;
+  /* padding: 20px; */
   text-align: center;
-  width: 80%;
+  width: 90%;
+  /* 80%  */
   margin-top: 10px;
 }
 
 .myButton {
   /* background-color: rgb(90, 90, 252); */
   border-radius: 5px;
+  /*
   height: 100px;
   width: 100px;
+  */
   /* height: 5%;
  //below one was in comments
   width: 7%; */
   padding: 5px 10px;
   margin: 5px auto;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .myInput {
@@ -190,7 +254,9 @@ div {
   height: 3%;
   margin: auto;
   padding: 20px;
+  /*
   width: 15%;
+  */
 }
 
 .myImageBox {
@@ -250,7 +316,9 @@ div {
   height: 3%;
   margin: auto;
   padding: 20px;
+  /*
   width: 15%;
+  */
 }
 
 .myBox_green {
@@ -262,7 +330,9 @@ div {
   height: 3%;
   margin: auto;
   padding: 20px;
+  /*
   width: 15%;
+  */
 }
 
 .myrow {
@@ -316,6 +386,18 @@ section {
   */
 }
 
+
+#koe .koe1 {
+  background: url(./speech.png) center center no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .grid-containerDD #firstGridItem {
   /*  vertical-align: middle; */
   color: yellow;
@@ -338,6 +420,7 @@ section {
   height:100%;
   width: 100%;
   */
+
   background-size: contain;
   /* <-- background size */
   background-position: center;
