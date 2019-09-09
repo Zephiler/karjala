@@ -1,0 +1,11 @@
+.square {
+	border: solid black 1px;
+	width: 1vw;
+	padding: 3px 10px;
+	margin: 0px;
+	display: inline-block;
+}
+.square:hover{
+	background-color: lightblue;
+	cursor: default;
+}

@@ -30,9 +30,10 @@ window.addEventListener("DOMContentLoaded", () => {
     xhttpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             sentences = JSON.parse(this.responseText);
+            console.log(sentences);
         }
     };
-    xhttpRequest.open("GET", "./animals.json", true);
+    xhttpRequest.open("GET", "./vocalbury/animals.json", true);
     xhttpRequest.send();
 
     getRandomImage();
@@ -64,7 +65,7 @@ function getRandomImage() {
     let a = document.querySelector("#kuva");
     switch (startImage) {
         case 0:
-            a.src = "/bear.png";
+            a.src = "/animalImages/bear.png";
             a.value = "kontie";
             up_l_msg.innerHTML = bearArr[0];
             up_r_msg.innerHTML = bearArr[1];
@@ -73,7 +74,7 @@ function getRandomImage() {
             //  helperBlock.innerHTML = "kontie";
             break;
         case 1:
-            a.src = "/dog.png";
+            a.src = "/animalImages/dog.png";
             a.value = "hurtta";
             up_l_msg.innerHTML = dogArr[0];
             up_r_msg.innerHTML = dogArr[1];
@@ -82,7 +83,7 @@ function getRandomImage() {
             //  helperBlock.innerHTML = "hurtta";
             break;
         case 2:
-            a.src = "/horse.png";
+            a.src = "/animalImages/horse2.png";
             a.value = "heponi";
             up_l_msg.innerHTML = horseArr[0];
             up_r_msg.innerHTML = horseArr[1];
@@ -91,7 +92,7 @@ function getRandomImage() {
             //  helperBlock.innerHTML = "heponi";
             break;
         case 3:
-            a.src = "/pig.png";
+            a.src = "/animalImages/pig.png";
             a.value = "syöttöpottsi";
             up_l_msg.innerHTML = pigArr[0];
             up_r_msg.innerHTML = pigArr[1];
@@ -100,7 +101,7 @@ function getRandomImage() {
             //  helperBlock.innerHTML = "syöttöpottši";
             break;
         case 4:
-            a.src = "/sheep.png";
+            a.src = "/animalImages/sheep.png";
             a.value = "karicca";
             up_l_msg.innerHTML = sheepArr[0];
             up_r_msg.innerHTML = sheepArr[1];
@@ -109,7 +110,7 @@ function getRandomImage() {
             //  helperBlock.innerHTML = "karičča";
             break;
         case 5:
-            a.src = "/cat.png";
+            a.src = "/animalImages/cat.png";
             a.value = "kissa";
             up_l_msg.innerHTML = catArr[0];
             up_r_msg.innerHTML = catArr[1];
@@ -118,7 +119,7 @@ function getRandomImage() {
             //  helperBlock.innerHTML = "kišša";
             break;
         case 6:
-            a.src = "/wolf.png";
+            a.src = "/animalImages/wolf.png";
             a.value = "hukka";
             up_l_msg.innerHTML = wolfArr[0];
             up_r_msg.innerHTML = wolfArr[1];
@@ -127,7 +128,7 @@ function getRandomImage() {
             //  helperBlock.innerHTML = "hukka";
             break;
         case 7:
-            a.src = "/fox.png";
+            a.src = "/animalImages/fox.png";
             a.value = "repo";
             up_l_msg.innerHTML = foxArr[0];
             up_r_msg.innerHTML = foxArr[1];

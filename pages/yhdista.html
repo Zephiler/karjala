@@ -3,19 +3,17 @@
 
 <head>
 	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1; user-scalable=0;"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
 		integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-	<!--<meta name="viewport" content="width=device-width, initial-scale=1"> -->
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
-	<script type="text/javascript" src="../memory.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/connectGame.css">
 </head>
 
 <body>
-
 	<nav class="navbar navbar-expand-lg" style="background-color: #ededed; border-bottom: 1px solid red;">
 		<a class="navbar-brand" href="/" style="color: rgb(213, 0, 0)">
 			Karelian project
@@ -50,8 +48,8 @@
 					</a>
 					<div class="dropdown-menu" aria-labelledby="dropdown2">
 						<a class="dropdown-item" href="/pickablock">Valitse sana ja palikka</a>
-						<a class="dropdown-item" href="/muistipeli" onclick="return false">Muistipeli</a>
-						<a class="dropdown-item" href="/connectgame">Yhdistä toisiinsa -peli</a>
+						<a class="dropdown-item" href="/muistipeli">Muistipeli</a>
+						<a class="dropdown-item" href="/connectgame" onclick="return false">Yhdistä toisiinsa -peli</a>
 						<a class="dropdown-item" href="/picgame">Kuvapeli</a>
 					</div>
 				</li>
@@ -71,14 +69,12 @@
 	</nav>
 
 	<center>
-		<h1>Muistipeli</h1>
+		<h1>Yhdistäpeli</h1>
 		<div id="main">
-			<button onclick="startGame(10)" class="buttons">Helppo</button>
-		</div>
-		<div id="game">
-		</div>
-		<div id="end">
+			<canvas id="canvas" width="600" height="600">
 
+			</canvas></br>
+			<button onclick="fresh()" id="nextButton">Uusipeli</button>
 		</div>
 	</center>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -90,7 +86,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 	</script>
-
+	<script type="text/javascript" src="../connectGame.js"></script>
 </body>
 
 </html>

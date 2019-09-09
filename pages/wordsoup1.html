@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fin">
+
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+        integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/wordsoup1.css">
+    <title>Wordsoup 1</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #ededed; border-bottom: 1px solid red;">
+        <a class="navbar-brand" href="/" style="color: rgb(213, 0, 0)">
+            Karelian project
+        </a>
+        <a class="navbar-brand" style="float: right" href="/" onclick="return false">
+            <span class="fa fa-question-circle" id="info" style="color: rgb(213, 0, 0)"></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon text-danger"></span> -->
+            <span class="fa fa-bars fa-xs" style="color: rgb(213, 0, 0)"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown1" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Sanapelit
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown1">
+                        <a class="dropdown-item" href="/weekdays">Viikonpäivät</a>
+                        <a class="dropdown-item" href="/crosswords">Sanaristikko</a>
+                        <a class="dropdown-item" href="/wordsearch">Sanaristikko 2</a>
+                        <a class="dropdown-item" href="/wordsoup" onclick="return false">Etsi sana</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown2" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Laatikkopelit
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown2">
+                        <a class="dropdown-item" href="/pickablock">Valitse sana ja palikka</a>
+                        <a class="dropdown-item" href="/muistipeli">Muistipeli</a>
+                        <a class="dropdown-item" href="/connectgame">Yhdistä toisiinsa -peli</a>
+                        <a class="dropdown-item" href="/picgame">Kuvapeli</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown3" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Laatikkopelit
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown3">
+                        <a class="dropdown-item" href="/dragdrop">Yhdistä sana ja kuva</a>
+                        <a class="dropdown-item" href="#">tokapeli</a>
+                        <a class="dropdown-item" href="#">kolmaspeli</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="exercise">
+        <h1>Wordsoup 1</h1>
+        <h2>Select a fruit and find in the soup its name by clicking the first and the last letter.</h2>
+        <h2></h2>
+    </div>
+    <div class="container">
+        <div class="section1" id="top">
+            <div class="image" id="image1" value="omena"></div>
+            <div class="image" id="image2" value="banani"></div>
+            <div class="image" id="image3" value="perssikka"></div>
+        </div>
+        <div class="section2">
+            <div class="section3" id="left">
+                <div class="image" id="image4" value="piärynä"></div>
+                <div class="image" id="image5" value="limoni"></div>
+            </div>
+            <div class="section3" id="center">
+                <table>
+                    <tr id="row1">
+                        <td id="box101">D</td>
+                        <td id="box102">U</td>
+                        <td id="box103">S</td>
+                        <td id="box104">R</td>
+                        <td id="box105">U</td>
+                        <td id="box106">N</td>
+                        <td id="box107">Ö</td>
+                        <td id="box108">K</td>
+                        <td id="box109">Ä</td>
+                        <td id="box110">J</td>
+                        <td id="box111">E</td>
+                        <td id="box112">A</td>
+                        <td id="box113">L</td>
+                        <td id="box114">L</td>
+                    </tr>
+                    <tr id="row2">
+                        <td id="box201">T</td>
+                        <td id="box202">F</td>
+                        <td id="box203">U</td>
+                        <td id="box204">K</td>
+                        <td id="box205">F</td>
+                        <td id="box206">Y</td>
+                        <td id="box207">T</td>
+                        <td id="box208">I</td>
+                        <td id="box209">Ö</td>
+                        <td id="box210">S</td>
+                        <td id="box211">P</td>
+                        <td id="box212">R</td>
+                        <td id="box213">E</td>
+                        <td id="box214">O</td>
+                    </tr>
+                    <tr id="row3">
+                        <td id="box301">E</td>
+                        <td id="box302">A</td>
+                        <td id="box303">K</td>
+                        <td id="box304">K</td>
+                        <td id="box305">I</td>
+                        <td id="box306">S</td>
+                        <td id="box307">S</td>
+                        <td id="box308">R</td>
+                        <td id="box309">E</td>
+                        <td id="box310">P</td>
+                        <td id="box311">B</td>
+                        <td id="box312">T</td>
+                        <td id="box313">V</td>
+                        <td id="box314">I</td>
+                    </tr>
+                    <tr id="row4">
+                        <td id="box401">R</td>
+                        <td id="box402">Š</td>
+                        <td id="box403">N</td>
+                        <td id="box404">U</td>
+                        <td id="box405">Č</td>
+                        <td id="box406">Ö</td>
+                        <td id="box407">Ä</td>
+                        <td id="box408">N</td>
+                        <td id="box409">E</td>
+                        <td id="box410">J</td>
+                        <td id="box411">A</td>
+                        <td id="box412">U</td>
+                        <td id="box413">S</td>
+                        <td id="box414">P</td>
+                    </tr>
+                    <tr id="row5">
+                        <td id="box501">V</td>
+                        <td id="box502">D</td>
+                        <td id="box503">O</td>
+                        <td id="box504">L</td>
+                        <td id="box505">Č</td>
+                        <td id="box506">T</td>
+                        <td id="box507">M</td>
+                        <td id="box508">L</td>
+                        <td id="box509">M</td>
+                        <td id="box510">A</td>
+                        <td id="box511">N</td>
+                        <td id="box512">L</td>
+                        <td id="box513">I</td>
+                        <td id="box514">P</td>
+                    </tr>
+                    <tr id="row6">
+                        <td id="box601">U</td>
+                        <td id="box602">I</td>
+                        <td id="box603">L</td>
+                        <td id="box604">I</td>
+                        <td id="box605">U</td>
+                        <td id="box606">U</td>
+                        <td id="box607">S</td>
+                        <td id="box608">T</td>
+                        <td id="box609">O</td>
+                        <td id="box610">M</td>
+                        <td id="box611">A</td>
+                        <td id="box612">T</td>
+                        <td id="box613">T</td>
+                        <td id="box614">I</td>
+                    </tr>
+                    <tr id="row7">
+                        <td id="box701">O</td>
+                        <td id="box702">Š</td>
+                        <td id="box703">N</td>
+                        <td id="box704">M</td>
+                        <td id="box705">L</td>
+                        <td id="box706">I</td>
+                        <td id="box707">O</td>
+                        <td id="box708">P</td>
+                        <td id="box709">R</td>
+                        <td id="box710">E</td>
+                        <td id="box711">N</td>
+                        <td id="box712">I</td>
+                        <td id="box713">R</td>
+                        <td id="box714">Ä</td>
+                    </tr>
+                    <tr id="row8">
+                        <td id="box801">M</td>
+                        <td id="box802">E</td>
+                        <td id="box803">S</td>
+                        <td id="box804">O</td>
+                        <td id="box805">I</td>
+                        <td id="box806">K</td>
+                        <td id="box807">M</td>
+                        <td id="box808">E</td>
+                        <td id="box809">A</td>
+                        <td id="box810">S</td>
+                        <td id="box811">I</td>
+                        <td id="box812">Š</td>
+                        <td id="box813">U</td>
+                        <td id="box814">R</td>
+                    </tr>
+                    <tr id="row9">
+                        <td id="box901">E</td>
+                        <td id="box902">O</td>
+                        <td id="box903">A</td>
+                        <td id="box904">N</td>
+                        <td id="box905">K</td>
+                        <td id="box906">H</td>
+                        <td id="box907">M</td>
+                        <td id="box908">A</td>
+                        <td id="box909">Y</td>
+                        <td id="box910">I</td>
+                        <td id="box911">S</td>
+                        <td id="box912">T</td>
+                        <td id="box913">N</td>
+                        <td id="box914">Y</td>
+                    </tr>
+                    <tr id="row10">
+                        <td id="box1001">N</td>
+                        <td id="box1002">R</td>
+                        <td id="box1003">I</td>
+                        <td id="box1004">I</td>
+                        <td id="box1005">S</td>
+                        <td id="box1006">R</td>
+                        <td id="box1007">I</td>
+                        <td id="box1008">S</td>
+                        <td id="box1009">S</td>
+                        <td id="box1010">M</td>
+                        <td id="box1011">O</td>
+                        <td id="box1012">I</td>
+                        <td id="box1013">I</td>
+                        <td id="box1014">N</td>
+                    </tr>
+                    <tr id="row11">
+                        <td id="box1101">A</td>
+                        <td id="box1102">T</td>
+                        <td id="box1103">R</td>
+                        <td id="box1104">O</td>
+                        <td id="box1105">L</td>
+                        <td id="box1106">P</td>
+                        <td id="box1107">O</td>
+                        <td id="box1108">H</td>
+                        <td id="box1109">O</td>
+                        <td id="box1110">A</td>
+                        <td id="box1111">Y</td>
+                        <td id="box1112">L</td>
+                        <td id="box1113">Č</td>
+                        <td id="box1114">Ä</td>
+                    </tr>
+                    <tr id="row12">
+                        <td id="box1201">N</td>
+                        <td id="box1202">P</td>
+                        <td id="box1203">U</td>
+                        <td id="box1204">Š</td>
+                        <td id="box1205">T</td>
+                        <td id="box1206">E</td>
+                        <td id="box1207">T</td>
+                        <td id="box1208">A</td>
+                        <td id="box1209">S</td>
+                        <td id="box1210">R</td>
+                        <td id="box1211">Y</td>
+                        <td id="box1212">Ö</td>
+                        <td id="box1213">L</td>
+                        <td id="box1214">K</td>
+                    </tr>
+                    <tr id="row13">
+                        <td id="box1301">I</td>
+                        <td id="box1302">K</td>
+                        <td id="box1303">E</td>
+                        <td id="box1304">Y</td>
+                        <td id="box1305">H</td>
+                        <td id="box1306">G</td>
+                        <td id="box1307">R</td>
+                        <td id="box1308">S</td>
+                        <td id="box1309">T</td>
+                        <td id="box1310">J</td>
+                        <td id="box1311">E</td>
+                        <td id="box1312">E</td>
+                        <td id="box1313">R</td>
+                        <td id="box1314">K</td>
+                    </tr>
+                    <tr id="row14">
+                        <td id="box1401">S</td>
+                        <td id="box1402">L</td>
+                        <td id="box1403">I</td>
+                        <td id="box1404">I</td>
+                        <td id="box1405">V</td>
+                        <td id="box1406">U</td>
+                        <td id="box1407">A</td>
+                        <td id="box1408">M</td>
+                        <td id="box1409">I</td>
+                        <td id="box1410">A</td>
+                        <td id="box1411">G</td>
+                        <td id="box1412">N</td>
+                        <td id="box1413">A</td>
+                        <td id="box1414">Ä</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="section3" id="right">
+                <div class="image" id="image6" value="vinokroata"></div>
+                <div class="image" id="image7" value="tomatti"></div>
+            </div>
+        </div>
+        <div class="section1" id="bottom">
+            <div class="image" id="image8" value="sliivu"></div>
+            <div class="image" id="image9" value="mesimarja"></div>
+            <div class="image" id="image10" value="appelsiini"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="../wordsoup1.js"></script>
+</body>
+
+</html>

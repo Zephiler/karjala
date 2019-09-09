@@ -117,12 +117,28 @@ function drop(event) {
     //qText.style.color = "black";
     //bubble.style.visibility = "visible";
     console.log("NOT equal");
+    centerBlock.classList.remove(...centerBlock.classList);
+    centerBlock.classList.add("grid-item");
+    centerBlock.classList.add("changeCat");
+    centerBlock.classList.add("item2");
+    /*
+    centerBlock.style.background = "url(./kissa_no4.png)";
+    centerBlock.style.width = "280px";
+    centerBlock.style.height = "400px";
+    centerBlock.style.padding = "50px";
+
+    centerBlock.style.backgroundPosition = "center";
+    centerBlock.style.backgroundSize = "100% 100%";
+    centerBlock.style.backgroundRepeat = "no-repeat";
+    */
+
     gridContainer.style.backgroundColor = "red";
     document.querySelector("body").style.background = "red";
     setTimeout(() => {
       gridContainer.style.backgroundColor = "transparent";
       document.querySelector("body").style.background = "#C0EAF7";
-    }, 200);
+      centerBlock.classList.add("changeCat2");
+    }, 500);
 
     setTimeout(() => {
       bubble.style.visibility = "visible";
@@ -132,12 +148,15 @@ function drop(event) {
 
   else {
     // qText.style.color = "red";
+    centerBlock.classList.remove(...centerBlock.classList);
+    centerBlock.classList.add("item2");
+    centerBlock.classList.add("grid-item");
     gridContainer.style.backgroundColor = "green";
     document.querySelector("body").style.background = "green";
     setTimeout(() => {
       gridContainer.style.backgroundColor = "transparent";
       document.querySelector("body").style.background = "#C0EAF7";
-    }, 100);
+    }, 500);
     setTimeout(() => {
       bubble.style.visibility = "visible";
       qText.style.color = "black";

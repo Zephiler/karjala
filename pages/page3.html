@@ -12,7 +12,7 @@
     integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="../pagestyle3.css">
+  <link rel="stylesheet" href="./css/pagestyle3.css">
   <title>Karelian project</title>
 </head>
 
@@ -24,34 +24,16 @@
       Karelian project
     </a>
     <a class="navbar-brand" style="float: right" href="/" onclick="return false">
-      <span class="fa fa-question-circle" id="info" style="color: rgb(213, 0, 0)"><small> Pelin ohjeet</small></span>
+      <span class="fa fa-question-circle" id="info" style="color: rgb(213, 0, 0)"><small> Pelin ohje</small></span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <!-- <span class="navbar-toggler-icon text-danger"></span> -->
       <span class="fa fa-bars fa-xs" style="color: rgb(213, 0, 0)"></span>
-
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <!--
-          <li class="nav-item">
-            <a class="nav-link" href="/weekdays" onclick="return false">Weekdays Game</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pickablock">Pick-a-block Game</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/dragdrop">Drag & Drop Game</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pagefour">Page 4</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pagefive">Page 5</a>
-          </li>
-          -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown1" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -60,7 +42,8 @@
           <div class="dropdown-menu" aria-labelledby="dropdown1">
             <a class="dropdown-item" href="/weekdays">Viikonpäivät</a>
             <a class="dropdown-item" href="/crosswords">Sanaristikko</a>
-            <a class="dropdown-item" href="#">kolmaspeli</a>
+            <a class="dropdown-item" href="/wordsearch">Sanaristikko 2</a>
+            <a class="dropdown-item" href="/wordsoup">Etsi sana</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -71,7 +54,8 @@
           <div class="dropdown-menu" aria-labelledby="dropdown2">
             <a class="dropdown-item" href="/pickablock">Valitse sana ja palikka</a>
             <a class="dropdown-item" href="/muistipeli">Muistipeli</a>
-            <a class="dropdown-item" href="#">kolmaspeli</a>
+            <a class="dropdown-item" href="/connectgame">Yhdistä toisiinsa -peli</a>
+            <a class="dropdown-item" href="/picgame">Kuvapeli</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -88,7 +72,6 @@
       </ul>
     </div>
   </nav>
-
 
   <div class="myrow">
     <div class="myModal" id="startmodal" style="display: none;">
@@ -109,29 +92,21 @@
         <h1>Kiitos, peli loppui</h1>
         <br>
         <h5>Haluaisitko pelata uudelleen?</h5>
-
         <button class="myButton" id="playAgain">joo</button>
         <button class="myButton" id="dontPlayAgain">ei</button>
       </div>
     </div>
-
-
-
   </div>
 
   <div class="myrow" style="margin-left: 20%; margin-right: 20%;
      justify-content: center; text-align: center; vertical-align: middle;">
     <div class="container" id="bubble">
-      <img src="./omakupla2.png" width="250px" height="130px" alt="kuva">
+      <img src="../page2/omakupla2.png" width="250px" height="130px" alt="kuva" style="margin-bottom: -10px;">
       <div class="centered">
         <p id="questionText"></p>
       </div>
     </div>
-
-
   </div>
-
-
 
   <div class="myrow" style="margin-left: 20%; margin-right: 20%; justify-content: center;">
     <div class="grid-containerDD" id="gridContainer" style="position: static; margin-top: -15px; border-radius: 10px;">
@@ -147,11 +122,7 @@
     </div>
   </div>
   <p id="randomText" style="visibility: hidden"></p>
-  <!--
-  <div class="footer" style="height: 50px; background-color:rgb(164,18,36);">
-    <div class="mydiv"></div>
-  </div>
-  -->
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
   </script>
@@ -165,21 +136,3 @@
 </body>
 
 </html>
-
-
-<!--
-  <div class="header">
-    <ul>
-      <li><a href="/"><i class="fa fa-angle-double-left"></i></a></li>
-      <li><a href="/weekdays">Weekdays Game</a></li>
-      <li><a href="/pickablock">Pick-a-block Game</a></li>
-      <li><a href="/dragdrop" onclick="return false">Drag & Drop Game</a></li>
-      <li><a href="/pagefour">Page 4</a></li>
-    </ul>
-
-    <ul style="float:right;">
-      <li>fi</li>
-      <li>viena</li>
-    </ul>
-  </div>
--->

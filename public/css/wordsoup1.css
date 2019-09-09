@@ -1,0 +1,221 @@
+body {
+    margin: 10px;
+}
+
+.exercise {
+    height: 200px;
+    padding-left: 30px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 700px;
+    padding-left: 75px;
+    padding-right: 75px;
+    align-items: center;
+}
+
+.image {
+    border: 1px solid green;
+}
+
+.imgSelected {
+    border: inset red;
+}
+
+/*.imgSolved{}*/
+
+.section1 {
+    display: grid;
+    grid-template-columns: repeat(9, 75px);
+    grid-template-rows: repeat(5, 25px);
+    height: 125px;
+    justify-content: center;
+}
+
+#top {
+    border-top: 1px solid green;
+    border-left: 1px solid green;
+    border-right: 1px solid green;
+}
+
+#image1 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    background-image: url(/wordsoupImages/a_image1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#image2 {
+    grid-column-start: 5;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    background-image: url(/wordsoupImages/a_image2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#image3 {
+    grid-column-start: 8;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    background-image: url(/wordsoupImages/a_image3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#bottom {
+    border-bottom: 1px solid green;
+    border-left: 1px solid green;
+    border-right: 1px solid green;
+}
+
+#image8 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    background-image: url(/wordsoupImages/a_image8.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#image9 {
+    grid-column-start: 5;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    background-image: url(/wordsoupImages/a_image9.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#image10 {
+    grid-column-start: 8;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    background-image: url(/wordsoupImages/a_image10.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.section2 {
+    display: grid;
+    grid-template-columns: 125px 450px 125px;
+    height: 375px;
+}
+
+#left {
+    border-left: 1px solid green;
+    border-right: 1px solid green;
+    display: grid;
+    grid-template-columns: repeat(5, 25px);
+    grid-template-rows: repeat(5, 75px);
+    justify-content: center;
+}
+
+#image4 {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    background-image: url(/wordsoupImages/a_image4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#image5 {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    background-image: url(/wordsoupImages/a_image5.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#right {
+    border-left: 1px solid green;
+    border-right: 1px solid green;
+    display: grid;
+    grid-template-columns: repeat(5, 25px);
+    grid-template-rows: repeat(5, 75px);
+    justify-content: center;
+}
+
+#image6 {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    background-image: url(/wordsoupImages/a_image6.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#image7 {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    background-image: url(/wordsoupImages/a_image7.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#center {
+    border-bottom: 1px solid green;
+    border-top: 1px solid green;
+    padding: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+
+tr {
+    border: 1px black solid;
+}
+
+td {
+    border: 1px black solid;
+    text-align: center;
+}
+
+.letterSelected {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.imageCorrect {
+    border: 1px solid green;
+    opacity: 0.3;
+}
+
+.imageIncorrect {
+    border: outset black;
+    opacity: 0.5;
+}
+
+.letterCorrect {
+    background-color: rgba(0, 128, 0, 0.2)
+}
+
+.letterCorrectRed {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.letterCorrectGrey {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.letterIncorrect {
+    background-color: rgba(0, 0, 0, 0.2);
+}

@@ -1,6 +1,8 @@
 var cardArr = [];
 var cards = [];
-var pic = './tausta.png';
+var pic = './memoryImages/tausta.png';
+// var pic = './tausta.png';
+// var pic = '/memoryImages/tausta.png';
 var victory = 0;
 var winCards = 0;
 var flips = 0;
@@ -8,16 +10,16 @@ var totalFlips = 0;
 // card number and pic
 
 var testCards = [
-	{ id: 1, pairNum: 1, pic: "url('./sun.jpg')" },
-	{ id: 2, pairNum: 1, pic: "url('./sun.jpg')" },
-	{ id: 3, pairNum: 2, pic: "url('./dino.jpg')" },
-	{ id: 4, pairNum: 2, pic: "url('./dino.jpg')" },
-	{ id: 5, pairNum: 3, pic: "url('./bean.jpg')" },
-	{ id: 6, pairNum: 3, pic: "url('./bean.jpg')" },
-	{ id: 7, pairNum: 4, pic: "url('./arska.png')" },
-	{ id: 8, pairNum: 4, pic: "url('./arska.png')" },
-	{ id: 9, pairNum: 5, pic: "url('./siili.jpg')" },
-	{ id: 10, pairNum: 5, pic: "url('./siili.jpg')" }
+	{ id: 1, pairNum: 1, pic: "url('./memoryImages/sun.jpg')" },
+	{ id: 2, pairNum: 1, pic: "url('./memoryImages/sun.jpg')" },
+	{ id: 3, pairNum: 2, pic: "url('./memoryImages/dino.jpg')" },
+	{ id: 4, pairNum: 2, pic: "url('./memoryImages/dino.jpg')" },
+	{ id: 5, pairNum: 3, pic: "url('./memoryImages/bean.jpg')" },
+	{ id: 6, pairNum: 3, pic: "url('./memoryImages/bean.jpg')" },
+	{ id: 7, pairNum: 4, pic: "url('./memoryImages/arska.png')" },
+	{ id: 8, pairNum: 4, pic: "url('./memoryImages/arska.png')" },
+	{ id: 9, pairNum: 5, pic: "url('./memoryImages/siili.jpg')" },
+	{ id: 10, pairNum: 5, pic: "url('./memoryImages/siili.jpg')" }
 ];
 
 // Function makes gameboard. 
@@ -48,8 +50,8 @@ function flipCard(id) {
 		if (cardArr.length == 2) {
 			if (cardArr[0].pairNum !== cardArr[1].pairNum) { // if flipped cards pairNum is not same then flip cards back
 				setTimeout(function () {
-					document.getElementById(cardArr[0].id).style.backgroundImage = "url('./tausta.png')";
-					document.getElementById(cardArr[1].id).style.backgroundImage = "url('./tausta.png')";
+					document.getElementById(cardArr[0].id).style.backgroundImage = "url('./memoryImages/tausta.png')";
+					document.getElementById(cardArr[1].id).style.backgroundImage = "url('./memoryImages/tausta.png')";
 					cardArr = [];
 					flips = 0;
 					totalFlips += 2;

@@ -1,3 +1,4 @@
+// let w = {};
 let weekdays = {};
 let randomIntDay = 0;
 let guessCount = 0;
@@ -26,8 +27,23 @@ window.addEventListener('DOMContentLoaded', () => {
       weekdays = JSON.parse(this.responseText);
     }
   };
-  xhttpReg.open("GET", "week.json", true);
+  xhttpReg.open("GET", "./vocalbury/week.json", true);
+  // xhttpReg.open("GET", "week.json", true);
   xhttpReg.send();
+
+  /*
+  let xhttpReg2 = new XMLHttpRequest();
+  xhttpReg2.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      w = JSON.parse(this.responseText);
+    }
+  };
+  xhttpReg2.open("GET", "month.json", true);
+  xhttpReg2.send();
+  */
+
+
+
 
   let myBtn2 = document.querySelector("#myBtn2");
   let myBtn3 = document.querySelector("#myBtn3");
@@ -51,6 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   info.addEventListener("mouseenter", function () {
     document.getElementById("startmodal").style.display = "block";
+    // console.log(w);
   })
 
   info.addEventListener("mouseleave", function () {

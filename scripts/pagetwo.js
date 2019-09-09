@@ -43,7 +43,8 @@ function makePieces(num) {
     let spanDiv = document.createElement("div");
 
     let spanImage = document.createElement("img");
-    spanImage.src = arr[i] + ".png";
+    spanImage.src = "./animalImages" + arr[i] + ".png";
+    // spanImage.src = arr[i] + ".png";
     spanImage.id = "a" + i;
     spanImage.classList.add("myImageBox");
 
