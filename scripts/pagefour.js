@@ -15,13 +15,19 @@ window.addEventListener("DOMContentLoaded", () => {
   xhttpRequest.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       sentences = JSON.parse(this.responseText);
+      console.log(sentences);
+      for (let i in sentences) {
+        console.log(sentences[i].two);
+      }
     }
   };
-  xhttpRequest.open("GET", "./animals.json", true);
+  xhttpRequest.open("GET", "./vocalbury/numbers.json", true);
   xhttpRequest.send();
 
   getRandomImage();
 })
+
+
 
 btn1.addEventListener("click", () => {
   let value = document.querySelector("#textInput1").value;

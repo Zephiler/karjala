@@ -5,16 +5,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+        integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
 <body background="#ededed">
     <h1>Otsikko</h1>
 
-    <a id="btn1" href="/koe2">
-        Paina
-    </a>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4">
+            <button id="nappi">
+                Kuukaudet
+            </button>
+        </div>
 
+        <div class="col-sm-4">
+            <button id="nappi2">
+                Järjestysnumero
+            </button>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+
+
+    <div id="dataToReceive"></div>
 
     <script src="/nameless.js"></script>
 </body>

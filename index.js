@@ -23,11 +23,11 @@ app.get("/weekdays", (request, response) => {
   response.sendFile(__dirname + "/pages/page1.html");
 });
 
-/*
+
 app.get("/nameless", (request, response) => {
   response.sendFile(__dirname + "/pages/nameless.html")
 })
-*/
+
 
 app.get("/wordsoup", (request, response) => {
   response.sendFile(__dirname + "/pages/wordsoup1.html");

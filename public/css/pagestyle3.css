@@ -17,63 +17,16 @@ a {
     display: none;
 }
 
-/*
-.myrow>.centered {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10%;
-}
-*/
 div {
     display: inline-block;
 }
 
+
+#speechbubble {
+    width: inherit;
+}
+
 /*
-
-.footer {
-    background: rgb(61, 53, 68);
-    bottom: 0;
-    / height: 5%; /
-    padding: 5px;
-    position: fixed;
-    width: 100%;
-    text-align: center;
-}
-*/
-
-.mydiv {
-    background-image: url(../k_image.png);
-    background-repeat: repeat;
-    background-position: center center;
-    background-size: contain;
-    width: 100%;
-    height: 100%;
-}
-
-#points_modal {
-    display: none;
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    margin-bottom: 100px;
-    text-align: center;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
-}
-
-#theDay {
-    font-size: 10px;
-    font-family: "Palatino Linotype";
-    animation: anim 1s infinite;
-}
-
 @-webkit-keyframes anim {
     0% {
         color: red;
@@ -146,6 +99,7 @@ div {
         color: red;
     }
 }
+*/
 
 .myModal {
     position: fixed;
@@ -164,51 +118,6 @@ div {
     /* Black w/ opacity */
 }
 
-.answerModal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    text-align: center;
-    font-size: 18px;
-    height: 50%;
-    width: 50%;
-    overflow: auto;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 10%;
-    align-content: center;
-}
-
-.result_img {
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.result_img_correct {
-    background: url(../thumb_up.png) center center no-repeat;
-    background-size: contain;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.result_img_not_correct {
-    background: url(../sadface.png) center center no-repeat;
-    background-size: contain;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .endModal {
     display: none;
@@ -226,24 +135,6 @@ div {
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
-}
-
-#mainBox {
-    background: white;
-    border-radius: 10px;
-    display: block;
-    margin: auto;
-    margin-top: 10px;
-    text-align: center;
-}
-
-#mainBox2 {
-    background: white;
-    border-radius: 10px;
-    display: block;
-    margin: auto;
-    margin-top: 10px;
-    text-align: center;
 }
 
 .modal_content {
@@ -273,47 +164,6 @@ div {
     font-size: 20px;
 }
 
-.myBox {
-    background: rgb(204, 218, 214);
-    border: 2px solid black;
-    border-radius: 5px;
-    display: inline-block;
-    height: 3%;
-    margin: 2px 2px 2px;
-    /*  margin: auto; */
-    padding: 20px;
-    /*
-  width: 15%;
-  */
-}
-
-.myBox_orange {
-    background: rgb(204, 218, 214);
-    border: 2px solid black;
-    border-radius: 5px;
-    box-shadow: 0px 0px 4px 4px rgb(255, 95, 3);
-    display: inline-block;
-    height: 3%;
-    /*  margin: auto; */
-    padding: 20px;
-    /*
-  width: 15%;
-  */
-}
-
-.myBox_green {
-    background: rgb(204, 218, 214);
-    border: 2px solid black;
-    border-radius: 5px;
-    box-shadow: 0px 0px 4px 4px rgb(53, 255, 3);
-    display: inline-block;
-    height: 3%;
-    /*  margin: auto; */
-    padding: 20px;
-    /*
-  width: 15%;
-  */
-}
 
 .myrow {
     display: -webkit-box;
@@ -323,11 +173,6 @@ div {
     flex-wrap: wrap;
 }
 
-.p_points {
-    font-size: 22px;
-}
-
-/* Page three */
 .item2 {
     background: red;
     grid-row-start: 1;
@@ -342,6 +187,7 @@ div {
 }
 
 .grid-containerDD .grid-item {
+    /* .grid-containerDD .grid-item {  */
     padding: 50px;
     font-size: 50px;
     text-align: center;
@@ -361,34 +207,31 @@ div {
     max-width: 100%;
     height: auto;
     */
+    /*  new below  */
+
+
 }
 
 
 .container {
     position: relative;
     text-align: center;
+    height: 200px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .centered {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 50%;
 }
 
-
-#koe .koe1 {
-    background: url(../speech.png) center center no-repeat;
-    background-size: contain;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .grid-item.item1 {
+    /* .grid-item.item1 {  */
     /* firstGridItem  */
     /*  vertical-align: middle; */
     color: yellow;
@@ -399,11 +242,9 @@ div {
     display: block;
     margin-left: auto;
     margin-right: auto;
+
 }
 
-.item1 {
-    background: white;
-}
 
 .grid-item.item2 {
     /* .grid-containerDD #secondGridItem  */
@@ -544,7 +385,32 @@ div {
     width: 420px;
 }
 
+img {
+    vertical-align: middle;
+    border-style: none;
+
+    height: -webkit-fill-available;
+    width: fit-content;
+}
+
 @media screen and (min-width: 901px) and (max-width: 1000px) {
+    /*  tuhat tonni  hakusana!*/
+
+    .grid-item.item1,
+    .grid-item.item3,
+    .grid-item.item4,
+    .grid-item.item5,
+    .grid-item.item6,
+    .grid-item.item7,
+    .grid-item.item8,
+    .grid-item.item9 {
+        padding: 45px;
+    }
+
+    .grid-containerDD .grid-item {
+        padding: 45px;
+    }
+
     h1 {
         font-size: 26px;
     }
@@ -590,12 +456,36 @@ div {
 }
 
 @media screen and (min-width: 751px) and (max-width: 900px) {
+
+    /* seitsemän puoli 750  */
     h1 {
         font-size: 26px;
     }
 
     h5 {
         font-size: 18px;
+    }
+
+    .grid-item.item1,
+    .grid-item.item3,
+    .grid-item.item4,
+    .grid-item.item5,
+    .grid-item.item6,
+    .grid-item.item7,
+    .grid-item.item8,
+    .grid-item.item9 {
+        padding: 40px;
+    }
+
+    .grid-item.item2,
+    .grid-item.changeCat,
+    .grid-item.changeCat2 {
+        width: 240px;
+        height: 330px;
+    }
+
+    .grid-containerDD .grid-item {
+        padding: 40px;
     }
 
     #mainBox,
@@ -634,12 +524,40 @@ div {
 }
 
 @media screen and (min-width: 601px) and (max-width: 750px) {
+
+    /*  kuussataa kuusisataa 600 */
     h1 {
         font-size: 26px;
     }
 
     h5 {
         font-size: 18px;
+    }
+
+    .container {
+        height: 175px;
+    }
+
+    .grid-item.item1,
+    .grid-item.item3,
+    .grid-item.item4,
+    .grid-item.item5,
+    .grid-item.item6,
+    .grid-item.item7,
+    .grid-item.item8,
+    .grid-item.item9 {
+        padding: 40px;
+    }
+
+    .grid-item.item2,
+    .grid-item.changeCat,
+    .grid-item.changeCat2 {
+        width: 200px;
+        height: 260px;
+    }
+
+    .grid-containerDD .grid-item {
+        padding: 40px;
     }
 
     .myBox {
@@ -677,12 +595,42 @@ div {
 }
 
 @media screen and (min-width: 401px) and (max-width: 600px) {
+
+    /* neljäsataa 400  */
     h1 {
         font-size: 22px;
     }
 
     h5 {
         font-size: 14px;
+    }
+
+    img {
+        padding-top: 15px;
+        max-width: 350px;
+        max-height: 150px;
+    }
+
+    .grid-item.item1,
+    .grid-item.item3,
+    .grid-item.item4,
+    .grid-item.item5,
+    .grid-item.item6,
+    .grid-item.item7,
+    .grid-item.item8,
+    .grid-item.item9 {
+        padding: 25px;
+    }
+
+    .grid-item.item2,
+    .grid-item.changeCat,
+    .grid-item.changeCat2 {
+        width: 160px;
+        height: 200px;
+    }
+
+    .grid-containerDD .grid-item {
+        padding: 25px;
     }
 
     .myBox {
@@ -728,12 +676,50 @@ div {
 }
 
 @media screen and (min-width: 201px) and (max-width: 400px) {
+
+    /*  kaksisataa kakssataa 200 */
     h1 {
         font-size: 14px;
     }
 
     h5 {
         font-size: 10px;
+    }
+
+    .container {
+        height: 150px;
+    }
+
+    .centered {
+        top: 50%;
+    }
+
+    img {
+        padding-top: 15px;
+        max-width: 200px;
+        max-height: 150px;
+    }
+
+    .grid-containerDD .grid-item {
+        padding: 20px;
+    }
+
+    .grid-item.item1,
+    .grid-item.item3,
+    .grid-item.item4,
+    .grid-item.item5,
+    .grid-item.item6,
+    .grid-item.item7,
+    .grid-item.item8,
+    .grid-item.item9 {
+        padding: 20px;
+    }
+
+    .grid-item.item2,
+    .grid-item.changeCat,
+    .grid-item.changeCat2 {
+        width: 140px;
+        height: 180px;
     }
 
     .myBox {
@@ -778,6 +764,8 @@ div {
 }
 
 @media screen and (min-width: 100px) and (max-width: 200px) {
+
+    /* sata 100  */
     h1 {
         font-size: 12px;
     }
